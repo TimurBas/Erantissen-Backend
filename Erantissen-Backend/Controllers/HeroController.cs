@@ -1,7 +1,9 @@
-﻿using Erantissen_Backend.App.Services;
+﻿using Erantissen_Backend.App.Models;
+using Erantissen_Backend.App.Services;
 using Erantissen_Backend.Query.Models;
 using Erantissen_Backend.Query.Queries;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Erantissen_Backend.Controllers
 {
@@ -24,6 +26,11 @@ namespace Erantissen_Backend.Controllers
             return hero;
         }
 
-
+        [HttpPost()]
+        public async Task<ActionResult> CreateHero([FromBody] CreateHeroRequest request)
+        {
+            await _service.CreateHeroAsync(request);
+            return Ok("Hero created!");
+        }
     }
 }

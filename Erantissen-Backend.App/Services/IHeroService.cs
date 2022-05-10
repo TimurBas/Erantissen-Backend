@@ -1,6 +1,10 @@
-﻿namespace Erantissen_Backend.App.Services
+﻿using Erantissen_Backend.App.Models;
+using System.Threading.Tasks;
+
+namespace Erantissen_Backend.App.Services
 {
     public interface IHeroService
     {
+        Task CreateHeroAsync(CreateHeroRequest r);
     }
 }
