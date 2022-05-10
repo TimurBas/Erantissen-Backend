@@ -1,3 +1,8 @@
+using Erantissen_Backend.App.Services;
+using Erantissen_Backend.Data.Contexts;
+using Erantissen_Backend.Data.Repositories;
+using Erantissen_Backend.Domain.Repositories;
+using Erantissen_Backend.Query.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +30,10 @@ namespace Erantissen_Backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Erantissen_Backend", Version = "v1" });
             });
+            services.AddScoped<ProductContext>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductQuery, ProductQuery>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

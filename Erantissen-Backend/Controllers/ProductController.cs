@@ -21,9 +21,9 @@ namespace Erantissen_Backend.Controllers
         }
 
         [HttpGet("{title}")]
-        public async Task<ActionResult<ProductReadDto>> GetProduct([FromRoute] string title)
+        public ActionResult<ProductReadDto> GetProduct([FromRoute] string title)
         {
-            var product = await _query.GetProduct(title);
+            var product = _query.GetProduct(title);
             return Ok(product);
         }
 

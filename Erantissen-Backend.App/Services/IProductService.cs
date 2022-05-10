@@ -5,8 +5,8 @@ namespace Erantissen_Backend.App.Services
 {
     public interface IProductService
     {
-        Task CreateProduct(CreateProductRequest request);
-        Task UpdateProduct(UpdateProductRequest request);
+        Task CreateProduct(CreateProductRequest r);
+        Task UpdateProduct(UpdateProductRequest r);
         Task DeleteProduct(string title);
     }
 }

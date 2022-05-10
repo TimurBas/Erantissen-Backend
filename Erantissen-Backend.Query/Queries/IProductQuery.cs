@@ -4,6 +4,6 @@ namespace Erantissen_Backend.Query.Queries
 {
     public interface IProductQuery
     {
-        Task<ProductReadDto> GetProduct(string title);
+        ProductReadDto GetProduct(string title);
     }
 }

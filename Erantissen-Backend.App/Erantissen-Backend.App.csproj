@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Erantissen_Backend.App</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Erantissen-Backend.Domain\Erantissen-Backend.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

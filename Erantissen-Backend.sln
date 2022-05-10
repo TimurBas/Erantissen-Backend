@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erantissen-Backend", "Erantissen-Backend\Erantissen-Backend.csproj", "{3B5FC5A0-DC95-4967-A325-9B499A3230AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erantissen-Backend", "Erantissen-Backend\Erantissen-Backend.csproj", "{3B5FC5A0-DC95-4967-A325-9B499A3230AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erantissen-Backend.App", "Erantissen-Backend.App\Erantissen-Backend.App.csproj", "{CA673B11-A894-4900-97BF-A1BF4275D93C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erantissen-Backend.Domain", "Erantissen-Backend.Domain\Erantissen-Backend.Domain.csproj", "{EEE076C7-5EA7-4063-A0A0-2482D6965908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erantissen-Backend.Data", "Erantissen-Backend.Data\Erantissen-Backend.Data.csproj", "{3420320C-E91F-4F4E-928C-8075A228DBAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erantissen-Backend.Query", "Erantissen-Backend.Query\Erantissen-Backend.Query.csproj", "{E6C682DB-7B6B-45E3-805C-3EFA6B40067C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{3B5FC5A0-DC95-4967-A325-9B499A3230AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B5FC5A0-DC95-4967-A325-9B499A3230AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B5FC5A0-DC95-4967-A325-9B499A3230AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA673B11-A894-4900-97BF-A1BF4275D93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA673B11-A894-4900-97BF-A1BF4275D93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA673B11-A894-4900-97BF-A1BF4275D93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA673B11-A894-4900-97BF-A1BF4275D93C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEE076C7-5EA7-4063-A0A0-2482D6965908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE076C7-5EA7-4063-A0A0-2482D6965908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEE076C7-5EA7-4063-A0A0-2482D6965908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE076C7-5EA7-4063-A0A0-2482D6965908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3420320C-E91F-4F4E-928C-8075A228DBAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3420320C-E91F-4F4E-928C-8075A228DBAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3420320C-E91F-4F4E-928C-8075A228DBAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3420320C-E91F-4F4E-928C-8075A228DBAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6C682DB-7B6B-45E3-805C-3EFA6B40067C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6C682DB-7B6B-45E3-805C-3EFA6B40067C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6C682DB-7B6B-45E3-805C-3EFA6B40067C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6C682DB-7B6B-45E3-805C-3EFA6B40067C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

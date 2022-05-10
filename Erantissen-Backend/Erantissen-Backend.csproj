@@ -3,10 +3,20 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>Erantissen_Backend</RootNamespace>
+    <AssemblyName>Erantissen-Backend</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Erantissen-Backend.App\Erantissen-Backend.App.csproj" />
+    <ProjectReference Include="..\Erantissen-Backend.Query\Erantissen-Backend.Query.csproj" />
   </ItemGroup>
 
 </Project>
