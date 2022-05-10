@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Erantissen_Backend.Controllers
 {
     [ApiController]
-    [Route("controller")]
+    [Route("[controller]")]
     public class HeroController: ControllerBase
     {
         private readonly IHeroService _service;
@@ -23,7 +23,7 @@ namespace Erantissen_Backend.Controllers
         public ActionResult<HeroReadDto> GetHero(int imageNumber)
         {
             var hero = _query.GetHero(imageNumber);
-            return hero;
+            return Ok(hero);
         }
 
         [HttpPost()]
@@ -31,6 +31,20 @@ namespace Erantissen_Backend.Controllers
         {
             await _service.CreateHeroAsync(request);
             return Ok("Hero created!");
+        }
+
+        [HttpPut()]
+        public async Task<ActionResult> UpdateHero([FromBody] UpdateHeroRequest request)
+        {
+            await _service.UpdateHeroAsync(request);
+            return Ok("Hero updated!");
+        }
+
+        [HttpDelete("{imageNumber}")]
+        public async Task<ActionResult> DeleteHero([FromRoute] int imageNumber)
+        {
+            await _service.DeleteHeroAsync(imageNumber);
+            return Ok($"Hero number {imageNumber} deleted!");
         }
     }
 }

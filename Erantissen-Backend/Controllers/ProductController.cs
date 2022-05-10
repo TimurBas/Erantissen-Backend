@@ -28,14 +28,14 @@ namespace Erantissen_Backend.Controllers
         }
 
         [HttpPost()]
-        public async Task<ActionResult> CreateProduct(CreateProductRequest request)
+        public async Task<ActionResult> CreateProduct([FromBody] CreateProductRequest request)
         {
             await _service.CreateProduct(request);
             return Ok($"Product {request.Title} successfully created");
         }
 
         [HttpPut()]
-        public async Task<ActionResult> UpdateProduct(UpdateProductRequest request)
+        public async Task<ActionResult> UpdateProduct([FromBody] UpdateProductRequest request)
         {
             await _service.UpdateProduct(request);
             return Ok($"Product {request.Title} successfully updated");

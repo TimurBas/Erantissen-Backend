@@ -3,9 +3,9 @@ using Erantissen_Backend.Domain.Entities;
 
 namespace Erantissen_Backend.Data.Mappers
 {
-    public static class Mapper
+    public static class ProductMapper
     {
-        internal static ProductDto MapDomainProductToDto(Product product)
+        internal static ProductDto MapDomainToDto(Product product)
         {
             return new ProductDto()
             {
@@ -19,7 +19,7 @@ namespace Erantissen_Backend.Data.Mappers
             };
         }
 
-        internal static void UpdateProductDtoFields(ProductDto productDto, Product product)
+        internal static void UpdateDtoFields(ProductDto productDto, Product product)
         {
             productDto.Title = product.Title;
             productDto.Price = product.Price;

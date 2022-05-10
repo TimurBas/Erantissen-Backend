@@ -34,6 +34,7 @@ namespace Erantissen_Backend
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductQuery, ProductQuery>();
+            services.AddScoped<IHeroRepository, HeroRepository>();
             services.AddScoped<IHeroService, HeroService>();
             services.AddScoped<IHeroQuery, HeroQuery>();
         }

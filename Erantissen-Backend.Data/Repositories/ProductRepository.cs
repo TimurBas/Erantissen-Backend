@@ -18,7 +18,7 @@ namespace Erantissen_Backend.Data.Repositories
 
         public async Task AddProductAsync(Product product)
         {
-            var mappedProduct = Mapper.MapDomainProductToDto(product);
+            var mappedProduct = ProductMapper.MapDomainToDto(product);
             await _context.Products.AddAsync(mappedProduct);
             await _context.SaveChangesAsync();
         }
@@ -26,7 +26,7 @@ namespace Erantissen_Backend.Data.Repositories
         public async Task UpdateProductAsync(Product product)
         {
             var productDto = _context.Products.Where(p => p.Title.Equals(product.Title)).FirstOrDefault();
-            Mapper.UpdateProductDtoFields(productDto, product);
+            ProductMapper.UpdateDtoFields(productDto, product);
             await _context.SaveChangesAsync();
         }
 
