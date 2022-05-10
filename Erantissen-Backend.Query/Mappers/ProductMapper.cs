@@ -1,12 +1,14 @@
 ﻿using Erantissen_Backend.Data.Models;
 using Erantissen_Backend.Query.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Erantissen_Backend.Query.Mappers
 {
-    public static class Mapper
+    public static class ProductMapper
     {
-        internal static ProductReadDto MapProductDtoToReadDto(ProductDto product)
+        internal static ProductReadDto MapDtoToReadDto(ProductDto product)
         {
             return new ProductReadDto()
             {
@@ -19,16 +21,9 @@ namespace Erantissen_Backend.Query.Mappers
             };
         }
 
-        internal static HeroReadDto MapHeroDtoToReadDto(HeroDto hero)
+        internal static List<ProductReadDto> MapAll(List<ProductDto> products)
         {
-            return new HeroReadDto()
-            {
-                ImageNumber = hero.ImageNumber,
-                Heading = hero.Heading,
-                Paragraph = hero.Paragraph,
-                ButtonText = hero.ButtonText,
-                DiscountText = hero.DiscountText
-            };
+            return products.Select(p => MapDtoToReadDto(p)).ToList();
         }
     }
 }

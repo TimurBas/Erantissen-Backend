@@ -1,8 +1,8 @@
 ﻿using Erantissen_Backend.Data.Contexts;
 using Erantissen_Backend.Query.Mappers;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Erantissen_Backend.Query.Queries
 {
@@ -18,8 +18,15 @@ namespace Erantissen_Backend.Query.Queries
         public ProductReadDto GetProduct(string title)
         {
             var product = _context.Products.AsNoTracking().Where(p => p.Title.Equals(title)).FirstOrDefault();
-            var mappedProduct = Mapper.MapProductDtoToReadDto(product);
+            var mappedProduct = ProductMapper.MapDtoToReadDto(product);
             return mappedProduct;
+        }
+
+        public List<ProductReadDto> GetAll()
+        {
+            var products = _context.Products.AsNoTracking().ToList();
+            var mappedProducts = ProductMapper.MapAll(products);
+            return mappedProducts;
         }
     }
 }

@@ -3,6 +3,7 @@ using Erantissen_Backend.App.Services;
 using Erantissen_Backend.Query.Models;
 using Erantissen_Backend.Query.Queries;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Erantissen_Backend.Controllers
@@ -24,6 +25,13 @@ namespace Erantissen_Backend.Controllers
         {
             var hero = _query.GetHero(imageNumber);
             return Ok(hero);
+        }
+
+        [HttpGet]
+        public ActionResult<List<HeroReadDto>> GetHeros()
+        {
+            var heros = _query.GetAll();
+            return Ok(heros);
         }
 
         [HttpPost()]

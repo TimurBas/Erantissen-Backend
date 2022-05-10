@@ -2,6 +2,7 @@
 using Erantissen_Backend.Query.Mappers;
 using Erantissen_Backend.Query.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Erantissen_Backend.Query.Queries
@@ -16,8 +17,15 @@ namespace Erantissen_Backend.Query.Queries
         public HeroReadDto GetHero(int imageNumber)
         {
             var hero = _context.Hero.AsNoTracking().Where(h => h.ImageNumber == imageNumber).FirstOrDefault();
-            var mappedHero = Mapper.MapHeroDtoToReadDto(hero);
+            var mappedHero = HeroMapper.MapDtoToReadDto(hero);
             return mappedHero;
+        }
+
+        public List<HeroReadDto> GetAll()
+        {
+            var heros = _context.Hero.AsNoTracking().ToList();
+            var mappedHeros = HeroMapper.MapAll(heros);
+            return mappedHeros;
         }
     }
 }
