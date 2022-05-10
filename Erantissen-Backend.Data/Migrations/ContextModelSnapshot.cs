@@ -37,6 +37,10 @@ namespace Erantissen_Backend.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Paragraph")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

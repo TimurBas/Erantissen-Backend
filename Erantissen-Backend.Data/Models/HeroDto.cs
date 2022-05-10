@@ -7,6 +7,8 @@ namespace Erantissen_Backend.Data.Models
         [Key]
         public int ImageNumber { get; set; }
         [Required]
+        public string ImageUrl { get; set; }
+        [Required]
         public string Heading { get; set; }
         [Required]
         public string Paragraph { get; set; }

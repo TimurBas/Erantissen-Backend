@@ -12,6 +12,7 @@ namespace Erantissen_Backend.Query.Mappers
             return new HeroReadDto()
             {
                 ImageNumber = hero.ImageNumber,
+                ImageUrl = hero.ImageUrl,
                 Heading = hero.Heading,
                 Paragraph = hero.Paragraph,
                 ButtonText = hero.ButtonText,

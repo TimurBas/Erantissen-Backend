@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Erantissen_Backend.Data.Migrations
 {
-    public partial class m : Migration
+    public partial class h : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,6 +13,7 @@ namespace Erantissen_Backend.Data.Migrations
                 {
                     ImageNumber = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Heading = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Paragraph = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ButtonText = table.Column<string>(type: "nvarchar(max)", nullable: false),

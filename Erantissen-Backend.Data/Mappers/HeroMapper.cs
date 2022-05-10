@@ -9,6 +9,7 @@ namespace Erantissen_Backend.Data.Mappers
         {
             return new HeroDto()
             {
+                ImageUrl = hero.ImageUrl,
                 Heading = hero.Heading,
                 Paragraph = hero.Paragraph,
                 ButtonText = hero.ButtonText,
@@ -18,6 +19,7 @@ namespace Erantissen_Backend.Data.Mappers
 
         internal static void UpdateDtoFields(HeroDto heroDto, Hero hero)
         {
+            heroDto.ImageUrl = hero.ImageUrl;
             heroDto.Heading = hero.Heading;
             heroDto.Paragraph = hero.Paragraph;
             heroDto.ButtonText = hero.ButtonText;

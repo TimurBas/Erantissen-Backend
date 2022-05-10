@@ -16,13 +16,13 @@ namespace Erantissen_Backend.App.Services
 
         public async Task CreateHeroAsync(CreateHeroRequest r)
         {
-            var hero = new Hero(r.Heading, r.Paragraph, r.ButtonText, r.DiscountText);
+            var hero = new Hero(r.ImageUrl, r.Heading, r.Paragraph, r.ButtonText, r.DiscountText);
             await _repo.AddHeroAsync(hero);
         }
 
         public async Task UpdateHeroAsync(UpdateHeroRequest r)
         {
-            var hero = new Hero(r.Heading, r.Paragraph, r.ButtonText, r.DiscountText);
+            var hero = new Hero(r.ImageUrl, r.Heading, r.Paragraph, r.ButtonText, r.DiscountText);
             await _repo.UpdateHeroAsync(r.ImageNumber, hero);
         }
 
