@@ -8,9 +8,9 @@ namespace Erantissen_Backend.Query.Queries
 {
     public class ProductQuery : IProductQuery
     {
-        private readonly ProductContext _context;
+        private readonly Context _context;
 
-        public ProductQuery(ProductContext context)
+        public ProductQuery(Context context)
         {
             _context = context;
         }

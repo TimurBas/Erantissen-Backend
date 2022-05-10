@@ -9,9 +9,9 @@ namespace Erantissen_Backend.Data.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly ProductContext _context;
+        private readonly Context _context;
 
-        public ProductRepository(ProductContext context)
+        public ProductRepository(Context context)
         {
             _context = context;
         }

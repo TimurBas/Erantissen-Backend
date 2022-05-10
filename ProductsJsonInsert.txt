@@ -1,0 +1,37 @@
+{
+  "title": "Magnesium Citrat",
+  "price": 179.95,
+  "description": "Bidrager til en normal muskelfunktion, mindske træthed og udmattelse.",
+  "quantity": 23,
+  "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/magnesium-citrat.jpg?i=7287&w=300&h=400",
+  "tag": "Sundhed"
+}
+
+{
+  "title": "Omnimin",
+  "price": 179.95,
+  "description": "Velafbalanceret multipræparat. 28 vitaminer, mineraler og andre næringsstoffer.",
+  "quantity": 2,
+  "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/omnimin.jpg?i=16621&w=300&h=400",
+  "tag": "Sundhed"
+}
+
+
+{
+  "title": "Multi Olie",
+  "price": 199.00,
+  "description": "Multianvendelig olie, med blid duft af orange og lavendel til hår, krop og ansigt.",
+  "quantity": 6,
+  "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/multi-olie.jpg?i=26933&w=300&h=400",
+  "tag": "Personlig Pleje"
+}
+
+
+{
+  "title": "Bidro Kvinder",
+  "price": 269.00,
+  "description": "Til kvinder i overgangsalderen",
+  "quantity": 63,
+  "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/bidro-kvinder.jpg?i=1208&w=300&h=400",
+  "tag": "Personlig Pleje"
+}

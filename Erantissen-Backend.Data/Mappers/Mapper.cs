@@ -1,6 +1,5 @@
 ﻿using Erantissen_Backend.Data.Models;
 using Erantissen_Backend.Domain.Entities;
-using System;
 
 namespace Erantissen_Backend.Data.Mappers
 {
@@ -14,7 +13,9 @@ namespace Erantissen_Backend.Data.Mappers
                 Title = product.Title,
                 Price = product.Price,
                 Description = product.Description,
-                Quantity = product.Quantity
+                Quantity = product.Quantity,
+                ImageUrl = product.ImageUrl,
+                Tag = product.Tag
             };
         }
 
@@ -24,6 +25,8 @@ namespace Erantissen_Backend.Data.Mappers
             productDto.Price = product.Price;
             productDto.Description = product.Description;
             productDto.Quantity = product.Quantity;
+            productDto.ImageUrl = product.ImageUrl;
+            productDto.Tag = product.Tag;
         }
     }
 }

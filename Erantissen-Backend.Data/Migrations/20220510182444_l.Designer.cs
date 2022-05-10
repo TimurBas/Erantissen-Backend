@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Erantissen_Backend.Data.Migrations
 {
-    [DbContext(typeof(ProductContext))]
-    [Migration("20220510172415_init")]
-    partial class init
+    [DbContext(typeof(Context))]
+    [Migration("20220510182444_l")]
+    partial class l
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,11 +32,17 @@ namespace Erantissen_Backend.Data.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("Quantity")
                         .HasColumnType("int");
+
+                    b.Property<string>("Tag")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Title");
 

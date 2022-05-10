@@ -18,4 +18,8 @@
     <ProjectReference Include="..\Erantissen-Backend.Domain\Erantissen-Backend.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

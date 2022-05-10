@@ -30,10 +30,12 @@ namespace Erantissen_Backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Erantissen_Backend", Version = "v1" });
             });
-            services.AddScoped<ProductContext>();
+            services.AddScoped<Context>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductQuery, ProductQuery>();
+            services.AddScoped<IHeroService, HeroService>();
+            services.AddScoped<IHeroQuery, HeroQuery>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
