@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Erantissen_Backend.Data.Migrations
 {
-    public partial class h : Migration
+    public partial class u : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,8 @@ namespace Erantissen_Backend.Data.Migrations
                     Heading = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Paragraph = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ButtonText = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DiscountText = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    DiscountText = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DiscountAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {

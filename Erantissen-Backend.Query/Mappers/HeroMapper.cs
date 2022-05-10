@@ -16,7 +16,8 @@ namespace Erantissen_Backend.Query.Mappers
                 Heading = hero.Heading,
                 Paragraph = hero.Paragraph,
                 ButtonText = hero.ButtonText,
-                DiscountText = hero.DiscountText
+                DiscountText = hero.DiscountText,
+                DiscountAmount = hero.DiscountAmount
             };
         }
 

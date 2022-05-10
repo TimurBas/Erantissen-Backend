@@ -30,6 +30,9 @@ namespace Erantissen_Backend.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("DiscountAmount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("DiscountText")
                         .HasColumnType("nvarchar(max)");
 

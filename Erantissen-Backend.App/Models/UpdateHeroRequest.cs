@@ -8,5 +8,6 @@
         public string Paragraph { get; set; }
         public string ButtonText { get; set; }
         public string DiscountText { get; set; }
+        public decimal DiscountAmount { get; set; }
     }
 }

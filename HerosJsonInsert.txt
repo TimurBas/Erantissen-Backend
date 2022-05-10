@@ -1,0 +1,18 @@
+{
+  "imageUrl": "https://www.helsam.dk/-/media/spot-1---forsideslider/2022/maj/top-banner-2400x900_4545.jpg?w=940&as=1&bc=FFFFFF",
+  "heading": "Vilde Priser på Probiotika fra NDS",
+  "paragraph": "Probiotic Classic 10 med 15 udvalgte bakteriestammer i pulverform. Levende fra indtagelse og veldokumenteret overlevelse af stammerne i mave/tarm-kanalen.",
+  "buttonText": "Find dem her",
+  "discountText": "Spar",
+  "discountAmount": 26
+}
+
+{
+  "imageUrl": "https://www.helsam.dk/-/media/spot-1---forsideslider/2022/maj/top-banner-2400x9002.jpg?w=940&as=1&bc=FFFFFF",
+  "heading": "Fornyet energi med Mega B-Stress",
+  "paragraph": "Unikt B-vitaminkompleks, som giver kroppen energi i pressede perioder. B-vitaminerne B1, B2, B3,5, B6 og B12 samt vitamin C og magnesium bidrager alle til at vedligeholde et normalt energistofskifte.",
+  "buttonText": "Køb dem her",
+  "discountText": "Spar",
+  "discountAmount": 10
+}
+

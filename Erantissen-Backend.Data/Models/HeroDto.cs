@@ -15,5 +15,6 @@ namespace Erantissen_Backend.Data.Models
         [Required]
         public string ButtonText { get; set; }
         public string DiscountText { get; set; }
+        public decimal DiscountAmount { get; set; }
     }
 }
