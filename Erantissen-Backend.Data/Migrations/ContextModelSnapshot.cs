@@ -53,6 +53,36 @@ namespace Erantissen_Backend.Data.Migrations
                     b.ToTable("Hero");
                 });
 
+            modelBuilder.Entity("Erantissen_Backend.Data.Models.MostBoughtProductDto", b =>
+                {
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tag")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Title");
+
+                    b.ToTable("MostBoughtProducts");
+                });
+
             modelBuilder.Entity("Erantissen_Backend.Data.Models.ProductDto", b =>
                 {
                     b.Property<string>("Title")

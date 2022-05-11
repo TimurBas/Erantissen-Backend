@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Erantissen_Backend.Data.Migrations
 {
-    public partial class u : Migration
+    public partial class e : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -23,6 +23,23 @@ namespace Erantissen_Backend.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Hero", x => x.ImageNumber);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MostBoughtProducts",
+                columns: table => new
+                {
+                    Title = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: true),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Tag = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MostBoughtProducts", x => x.Title);
                 });
 
             migrationBuilder.CreateTable(
@@ -47,6 +64,9 @@ namespace Erantissen_Backend.Data.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Hero");
+
+            migrationBuilder.DropTable(
+                name: "MostBoughtProducts");
 
             migrationBuilder.DropTable(
                 name: "Products");
