@@ -40,6 +40,9 @@ namespace Erantissen_Backend
             services.AddScoped<IMostBoughtProductRepository, MostBoughtProductRepository>();
             services.AddScoped<IMostBoughtProductService, MostBoughtProductService>();
             services.AddScoped<IMostBoughtProductQuery, MostBoughtProductQuery>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICategoryQuery, CategoryQuery>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

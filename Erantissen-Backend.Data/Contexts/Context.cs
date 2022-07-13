@@ -8,6 +8,7 @@ namespace Erantissen_Backend.Data.Contexts
         public DbSet<ProductDto> Products { get; set; }
         public DbSet<HeroDto> Hero { get; set; }
         public DbSet<MostBoughtProductDto> MostBoughtProducts { get; set; }
+        public DbSet<CategoryDto> Categories { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(Config.DbConnectionString);
@@ -18,6 +19,7 @@ namespace Erantissen_Backend.Data.Contexts
             builder.Entity<ProductDto>().ToTable("Products");
             builder.Entity<HeroDto>().ToTable("Hero");
             builder.Entity<MostBoughtProductDto>().ToTable("MostBoughtProducts");
+            builder.Entity<CategoryDto>().ToTable("Categories");
         }
     }
 }
