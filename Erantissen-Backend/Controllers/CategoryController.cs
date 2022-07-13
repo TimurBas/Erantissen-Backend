@@ -25,36 +25,36 @@ namespace Erantissen_Backend.Controllers
         [HttpGet("{title}")]
         public ActionResult<CategoryReadDto> GetCategory(string title)
         {
-            var hero = _query.GetCategory(title);
-            return Ok(hero);
+            var category = _query.GetCategory(title);
+            return Ok(category);
         }
 
         [HttpGet]
-        public ActionResult<List<CategoryReadDto>> GetCategory()
+        public ActionResult<List<CategoryReadDto>> GetCategories()
         {
-            var heros = _query.GetAll();
-            return Ok(heros);
+            var categories = _query.GetAll();
+            return Ok(categories);
         }
 
         [HttpPost()]
         public async Task<ActionResult> CreateCategory([FromBody] CreateCategoryRequest request)
         {
             await _service.CreateCategoryAsync(request);
-            return Ok("Hero created!");
+            return Ok("Category created!");
         }
 
         [HttpPut()]
         public async Task<ActionResult> UpdateCategory([FromBody] UpdateCategoryRequest request)
         {
             await _service.UpdateCategoryAsync(request);
-            return Ok("Hero updated!");
+            return Ok("Category updated!");
         }
 
         [HttpDelete("{title}")]
         public async Task<ActionResult> DeleteCategory([FromRoute] string title)
         {
             await _service.DeleteCategoryAsync(title);
-            return Ok($"Hero number {title} deleted!");
+            return Ok($"Category number {title} deleted!");
         }
     }
 }

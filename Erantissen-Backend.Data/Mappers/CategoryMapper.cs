@@ -12,7 +12,7 @@ namespace Erantissen_Backend.Data.Mappers
             {
                 Title = category.Title,
                 Description = category.Description,
-                Subcategories = category.Subcategories.Select(s => MapDomainToDto(s)).ToList()
+                Subcategories = category.Subcategories.Select(sc => MapDomainToDto(sc)).ToList()
             };
         }
 
@@ -20,14 +20,13 @@ namespace Erantissen_Backend.Data.Mappers
         {
             categoryDto.Title = category.Title;
             categoryDto.Description = category.Description;
-            categoryDto.Subcategories = category.Subcategories.Select(s => MapDomainToDto(s)).ToList();
         }
 
-        private static SubcategoryDto MapDomainToDto(Subcategory subcategory)
+        private static SubcategoryDto MapDomainToDto(string title)
         {
             return new SubcategoryDto()
             {
-                Title = subcategory.Title
+                Title = title
             };
         }
     }

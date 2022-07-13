@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Erantissen_Backend.Data.Migrations
 {
-    public partial class a : Migration
+    public partial class gfgfgf : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace Erantissen_Backend.Data.Migrations
                 columns: table => new
                 {
                     Title = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -72,27 +72,22 @@ namespace Erantissen_Backend.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SubcategoryDto",
+                name: "Subcategories",
                 columns: table => new
                 {
-                    Title = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CategoryDtoTitle = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    CategoryId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SubcategoryDto", x => x.Title);
+                    table.PrimaryKey("PK_Subcategories", x => x.CategoryId);
                     table.ForeignKey(
-                        name: "FK_SubcategoryDto_Categories_CategoryDtoTitle",
-                        column: x => x.CategoryDtoTitle,
+                        name: "FK_Subcategories_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Title",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SubcategoryDto_CategoryDtoTitle",
-                table: "SubcategoryDto",
-                column: "CategoryDtoTitle");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -107,7 +102,7 @@ namespace Erantissen_Backend.Data.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
-                name: "SubcategoryDto");
+                name: "Subcategories");
 
             migrationBuilder.DropTable(
                 name: "Categories");

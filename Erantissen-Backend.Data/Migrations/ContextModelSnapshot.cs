@@ -25,7 +25,6 @@ namespace Erantissen_Backend.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Title");
@@ -129,24 +128,26 @@ namespace Erantissen_Backend.Data.Migrations
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.SubcategoryDto", b =>
                 {
+                    b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CategoryDtoTitle")
-                        .HasColumnType("nvarchar(450)");
+                    b.HasKey("CategoryId");
 
-                    b.HasKey("Title");
-
-                    b.HasIndex("CategoryDtoTitle");
-
-                    b.ToTable("SubcategoryDto");
+                    b.ToTable("Subcategories");
                 });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.SubcategoryDto", b =>
                 {
-                    b.HasOne("Erantissen_Backend.Data.Models.CategoryDto", null)
+                    b.HasOne("Erantissen_Backend.Data.Models.CategoryDto", "Category")
                         .WithMany("Subcategories")
-                        .HasForeignKey("CategoryDtoTitle");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.CategoryDto", b =>

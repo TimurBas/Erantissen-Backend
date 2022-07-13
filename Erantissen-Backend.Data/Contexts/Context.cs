@@ -9,6 +9,7 @@ namespace Erantissen_Backend.Data.Contexts
         public DbSet<HeroDto> Hero { get; set; }
         public DbSet<MostBoughtProductDto> MostBoughtProducts { get; set; }
         public DbSet<CategoryDto> Categories { get; set; }
+        public DbSet<SubcategoryDto> Subcategories { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(Config.DbConnectionString);
@@ -20,6 +21,10 @@ namespace Erantissen_Backend.Data.Contexts
             builder.Entity<HeroDto>().ToTable("Hero");
             builder.Entity<MostBoughtProductDto>().ToTable("MostBoughtProducts");
             builder.Entity<CategoryDto>().ToTable("Categories");
+            builder.Entity<SubcategoryDto>().ToTable("Subcategories")
+                .HasOne(sc => sc.Category)
+                .WithMany(c => c.Subcategories)
+                .HasForeignKey(sc => sc.CategoryId);
         }
     }
 }
