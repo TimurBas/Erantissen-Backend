@@ -6,6 +6,6 @@ namespace Erantissen_Backend.Query.Models
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public List<string> Subcategories { get; set; }
+        public List<SubcategoryReadDto> Subcategories { get; set; }
     }
 }

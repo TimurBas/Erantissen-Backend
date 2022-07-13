@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Erantissen_Backend.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220511173317_e")]
-    partial class e
+    [Migration("20220713185449_a")]
+    partial class a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,20 @@ namespace Erantissen_Backend.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Erantissen_Backend.Data.Models.CategoryDto", b =>
+                {
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Title");
+
+                    b.ToTable("Categories");
+                });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.HeroDto", b =>
                 {
@@ -113,6 +127,33 @@ namespace Erantissen_Backend.Data.Migrations
                     b.HasKey("Title");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Erantissen_Backend.Data.Models.SubcategoryDto", b =>
+                {
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CategoryDtoTitle")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Title");
+
+                    b.HasIndex("CategoryDtoTitle");
+
+                    b.ToTable("SubcategoryDto");
+                });
+
+            modelBuilder.Entity("Erantissen_Backend.Data.Models.SubcategoryDto", b =>
+                {
+                    b.HasOne("Erantissen_Backend.Data.Models.CategoryDto", null)
+                        .WithMany("Subcategories")
+                        .HasForeignKey("CategoryDtoTitle");
+                });
+
+            modelBuilder.Entity("Erantissen_Backend.Data.Models.CategoryDto", b =>
+                {
+                    b.Navigation("Subcategories");
                 });
 #pragma warning restore 612, 618
         }

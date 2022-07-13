@@ -10,6 +10,6 @@ namespace Erantissen_Backend.Data.Models
         [Required]
         public string Description { get; set; }
         [Required]
-        public List<string> Subcategories { get; set; }
+        public List<SubcategoryDto> Subcategories { get; set; }
     }
 }

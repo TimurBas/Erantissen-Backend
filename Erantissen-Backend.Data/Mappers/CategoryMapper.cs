@@ -1,5 +1,6 @@
 ﻿using Erantissen_Backend.Data.Models;
 using Erantissen_Backend.Domain.Entities;
+using System.Linq;
 
 namespace Erantissen_Backend.Data.Mappers
 {
@@ -11,7 +12,7 @@ namespace Erantissen_Backend.Data.Mappers
             {
                 Title = category.Title,
                 Description = category.Description,
-                Subcategories = category.Subcategories
+                Subcategories = category.Subcategories.Select(s => MapDomainToDto(s)).ToList()
             };
         }
 
@@ -19,7 +20,15 @@ namespace Erantissen_Backend.Data.Mappers
         {
             categoryDto.Title = category.Title;
             categoryDto.Description = category.Description;
-            categoryDto.Subcategories = category.Subcategories;
+            categoryDto.Subcategories = category.Subcategories.Select(s => MapDomainToDto(s)).ToList();
+        }
+
+        private static SubcategoryDto MapDomainToDto(Subcategory subcategory)
+        {
+            return new SubcategoryDto()
+            {
+                Title = subcategory.Title
+            };
         }
     }
 }
