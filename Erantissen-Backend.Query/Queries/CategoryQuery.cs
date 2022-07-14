@@ -17,14 +17,14 @@ namespace Erantissen_Backend.Query.Queries
 
         public List<CategoryReadDto> GetAll()
         {
-            var categories = _context.Categories.AsNoTracking().ToList();
+            var categories = _context.Categories.Include(c => c.Subcategories).AsNoTracking().ToList();
             var mappedCategories = CategoryMapper.MapAll(categories);
             return mappedCategories;
         }
 
         public CategoryReadDto GetCategory(string title)
         {
-            var category = _context.Categories.AsNoTracking().Where(c => c.Title.Equals(title)).FirstOrDefault();
+            var category = _context.Categories.Include(c => c.Subcategories).AsNoTracking().Where(c => c.Title.ToLower().Equals(title.ToLower())).FirstOrDefault();
             var mappedCategory = CategoryMapper.MapDtoToReadDto(category);
             return mappedCategory;
         }

@@ -54,7 +54,7 @@ namespace Erantissen_Backend.Controllers
         public async Task<ActionResult> DeleteCategory([FromRoute] string title)
         {
             await _service.DeleteCategoryAsync(title);
-            return Ok($"Category number {title} deleted!");
+            return Ok($"Category {title} deleted!");
         }
     }
 }

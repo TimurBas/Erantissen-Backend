@@ -9,13 +9,11 @@ namespace Erantissen_Backend.Data.Mappers
         {
             return new ProductDto()
             {
-                Id = product.Id,
                 Title = product.Title,
                 Price = product.Price,
                 Description = product.Description,
                 Quantity = product.Quantity,
                 ImageUrl = product.ImageUrl,
-                Tag = product.Tag
             };
         }
 
@@ -23,13 +21,11 @@ namespace Erantissen_Backend.Data.Mappers
         {
             return new MostBoughtProductDto()
             {
-                Id = product.Id,
                 Title = product.Title,
                 Price = product.Price,
                 Description = product.Description,
                 Quantity = product.Quantity,
                 ImageUrl = product.ImageUrl,
-                Tag = product.Tag
             };
         }
 
@@ -40,7 +36,6 @@ namespace Erantissen_Backend.Data.Mappers
             productDto.Description = product.Description;
             productDto.Quantity = product.Quantity;
             productDto.ImageUrl = product.ImageUrl;
-            productDto.Tag = product.Tag;
         }
 
         internal static void UpdateMostBoughtDtoFields(MostBoughtProductDto productDto, Product product)
@@ -50,7 +45,6 @@ namespace Erantissen_Backend.Data.Mappers
             productDto.Description = product.Description;
             productDto.Quantity = product.Quantity;
             productDto.ImageUrl = product.ImageUrl;
-            productDto.Tag = product.Tag;
         }
     }
 }

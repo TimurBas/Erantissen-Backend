@@ -22,11 +22,13 @@ namespace Erantissen_Backend.Data.Mappers
             categoryDto.Description = category.Description;
         }
 
-        private static SubcategoryDto MapDomainToDto(string title)
+        private static SubcategoryDto MapDomainToDto(Subcategory subcategory)
         {
             return new SubcategoryDto()
             {
-                Title = title
+                Title = subcategory.Title,
+                ImageUrl = subcategory.ImageUrl,
+                Products = subcategory.Products.Select(p => ProductMapper.MapDomainToDto(p)).ToList()
             };
         }
     }

@@ -17,7 +17,6 @@ namespace Erantissen_Backend.Query.Mappers
                 Description = product.Description,
                 Quantity = product.Quantity,
                 ImageUrl = product.ImageUrl,
-                Tag = product.Tag
             };
         }
 
@@ -35,7 +34,6 @@ namespace Erantissen_Backend.Query.Mappers
                 Description = product.Description,
                 Quantity = product.Quantity,
                 ImageUrl = product.ImageUrl,
-                Tag = product.Tag
             };
         }
 

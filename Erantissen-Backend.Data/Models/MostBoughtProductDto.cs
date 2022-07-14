@@ -13,9 +13,9 @@ namespace Erantissen_Backend.Data.Models
         public decimal Price { get; set; }
         [Required]
         public string Description { get; set; }
-        public int? Quantity { get; set; }
+        public int Quantity { get; set; }
         public string ImageUrl { get; set; }
-        [Required]
-        public string Tag { get; set; }
+        public string SubcategoryId { get; set; }
+        public SubcategoryDto Subcategory { get; set; }
     }
 }

@@ -17,14 +17,11 @@ namespace Erantissen_Backend.Data.Contexts
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<ProductDto>().ToTable("Products");
+            builder.Entity<ProductDto>().ToTable("Products").HasOne(p => p.Subcategory).WithMany(sc => sc.Products).HasForeignKey(p => p.SubcategoryId);
             builder.Entity<HeroDto>().ToTable("Hero");
             builder.Entity<MostBoughtProductDto>().ToTable("MostBoughtProducts");
             builder.Entity<CategoryDto>().ToTable("Categories");
-            builder.Entity<SubcategoryDto>().ToTable("Subcategories")
-                .HasOne(sc => sc.Category)
-                .WithMany(c => c.Subcategories)
-                .HasForeignKey(sc => sc.CategoryId);
+            builder.Entity<SubcategoryDto>().ToTable("Subcategories").HasOne(sc => sc.Category).WithMany(c => c.Subcategories).HasForeignKey(sc => sc.CategoryId);
         }
     }
 }

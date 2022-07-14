@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Erantissen_Backend.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220713222837_gfgfgf")]
-    partial class gfgfgf
+    [Migration("20220714213213_AASS")]
+    partial class AASS
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,13 +23,18 @@ namespace Erantissen_Backend.Data.Migrations
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.CategoryDto", b =>
                 {
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Title");
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Categories");
                 });
@@ -86,29 +91,31 @@ namespace Erantissen_Backend.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("Quantity")
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<string>("Tag")
-                        .IsRequired()
+                    b.Property<string>("SubcategoryId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("SubcategoryId1")
+                        .HasColumnType("int");
+
                     b.HasKey("Title");
+
+                    b.HasIndex("SubcategoryId1");
 
                     b.ToTable("MostBoughtProducts");
                 });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.ProductDto", b =>
                 {
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
@@ -116,29 +123,63 @@ namespace Erantissen_Backend.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("Quantity")
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<string>("Tag")
-                        .IsRequired()
+                    b.Property<int>("SubcategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Title");
+                    b.HasKey("Id");
+
+                    b.HasIndex("SubcategoryId");
 
                     b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.SubcategoryDto", b =>
                 {
-                    b.Property<string>("CategoryId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CategoryId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Subcategories");
+                });
+
+            modelBuilder.Entity("Erantissen_Backend.Data.Models.MostBoughtProductDto", b =>
+                {
+                    b.HasOne("Erantissen_Backend.Data.Models.SubcategoryDto", "Subcategory")
+                        .WithMany()
+                        .HasForeignKey("SubcategoryId1");
+
+                    b.Navigation("Subcategory");
+                });
+
+            modelBuilder.Entity("Erantissen_Backend.Data.Models.ProductDto", b =>
+                {
+                    b.HasOne("Erantissen_Backend.Data.Models.SubcategoryDto", "Subcategory")
+                        .WithMany("Products")
+                        .HasForeignKey("SubcategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Subcategory");
                 });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.SubcategoryDto", b =>
@@ -155,6 +196,11 @@ namespace Erantissen_Backend.Data.Migrations
             modelBuilder.Entity("Erantissen_Backend.Data.Models.CategoryDto", b =>
                 {
                     b.Navigation("Subcategories");
+                });
+
+            modelBuilder.Entity("Erantissen_Backend.Data.Models.SubcategoryDto", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }
