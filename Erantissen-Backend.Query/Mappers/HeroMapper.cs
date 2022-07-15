@@ -11,13 +11,13 @@ namespace Erantissen_Backend.Query.Mappers
         {
             return new HeroReadDto()
             {
-                ImageNumber = hero.ImageNumber,
+                Id = hero.Id,
                 ImageUrl = hero.ImageUrl,
                 Heading = hero.Heading,
                 Paragraph = hero.Paragraph,
                 ButtonText = hero.ButtonText,
                 DiscountText = hero.DiscountText,
-                DiscountAmount = hero.DiscountAmount
+                Discount = hero.Discount
             };
         }
 

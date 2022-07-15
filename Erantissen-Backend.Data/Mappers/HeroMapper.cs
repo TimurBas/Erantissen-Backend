@@ -14,7 +14,7 @@ namespace Erantissen_Backend.Data.Mappers
                 Paragraph = hero.Paragraph,
                 ButtonText = hero.ButtonText,
                 DiscountText = hero.DiscountText,
-                DiscountAmount = hero.DiscountAmount
+                Discount = hero.Discount
             };
         }
 
@@ -25,6 +25,7 @@ namespace Erantissen_Backend.Data.Mappers
             heroDto.Paragraph = hero.Paragraph;
             heroDto.ButtonText = hero.ButtonText;
             heroDto.DiscountText = hero.DiscountText;
+            heroDto.Discount = hero.Discount;
         }
     }
 }

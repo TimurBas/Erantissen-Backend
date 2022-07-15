@@ -14,5 +14,11 @@ namespace Erantissen_Backend.Domain.Entities
             Description = description;
             Subcategories = subcategories;
         }
+
+        public Category(string title, string description)
+        {
+            Title = title;
+            Description = description;
+        }
     }
 }

@@ -43,10 +43,10 @@ namespace Erantissen_Backend.Controllers
             return Ok("Category created!");
         }
 
-        [HttpPut()]
-        public async Task<ActionResult> UpdateCategory([FromBody] UpdateCategoryRequest request)
+        [HttpPut("{title}")]
+        public async Task<ActionResult> UpdateCategory([FromRoute] string title, [FromBody] UpdateCategoryRequest request)
         {
-            await _service.UpdateCategoryAsync(request);
+            await _service.UpdateCategoryAsync(title, request);
             return Ok("Category updated!");
         }
 

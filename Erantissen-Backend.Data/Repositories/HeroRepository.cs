@@ -23,16 +23,16 @@ namespace Erantissen_Backend.Data.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateHeroAsync(int imageNumber, Hero hero)
+        public async Task UpdateHeroAsync(int id, Hero hero)
         {
-            var heroDto = _context.Hero.Where(h => h.ImageNumber == imageNumber).FirstOrDefault();
+            var heroDto = _context.Hero.Where(h => h.Id == id).FirstOrDefault();
             HeroMapper.UpdateDtoFields(heroDto, hero);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteHeroAsync(int imageNumber)
+        public async Task DeleteHeroAsync(int id)
         {
-            var hero = _context.Hero.Where(h => h.ImageNumber == imageNumber).FirstOrDefault();
+            var hero = _context.Hero.Where(h => h.Id == id).FirstOrDefault();
             _context.Hero.Remove(hero);
             await _context.SaveChangesAsync();
         }

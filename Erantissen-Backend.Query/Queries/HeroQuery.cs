@@ -14,9 +14,9 @@ namespace Erantissen_Backend.Query.Queries
         {
             _context = context;
         }
-        public HeroReadDto GetHero(int imageNumber)
+        public HeroReadDto GetHero(int id)
         {
-            var hero = _context.Hero.AsNoTracking().Where(h => h.ImageNumber == imageNumber).FirstOrDefault();
+            var hero = _context.Hero.AsNoTracking().Where(h => h.Id == id).FirstOrDefault();
             var mappedHero = HeroMapper.MapDtoToReadDto(hero);
             return mappedHero;
         }

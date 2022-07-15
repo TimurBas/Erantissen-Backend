@@ -1,143 +1,161 @@
 {
-  "title": "Mad og Drikke",
-  "description": "Er det tid til ny inspiration til din madlavning, eller ønsker du lækre snacks til hverdag eller fest? Her på siden finder du et utal af spændende produkter til din madlavning. Gå på opdagelse mellem alt fra mel og gryn, til kolde og varme drikke samt tørrede nødder og frugt. Udvalget er stort, og du finder helt sikkert noget du kan bruge.",
-  "subcategories": [
-    {
-      "title": "Bagning, mel, gryn og korn",
-      "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/boern-kategori.png",
-      "products": [
+    "title": "Mad og Drikke",
+    "description": "Er det tid til ny inspiration til din madlavning, eller ønsker du lækre snacks til hverdag eller fest? Her på siden finder du et utal af spændende produkter til din madlavning. Gå på opdagelse mellem alt fra mel og gryn, til kolde og varme drikke samt tørrede nødder og frugt. Udvalget er stort, og du finder helt sikkert noget du kan bruge.",
+    "subcategories": [
         {
-          "title": "Magnesium Citrat",
-          "price": 179.95,
-          "description": "Bidrager til en normal muskelfunktion, mindske træthed og udmattelse.",
-          "quantity": 23,
-          "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/magnesium-citrat.jpg?i=7287&w=300&h=400"
+            "title": "Bagning, mel, gryn og korn",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/boern-kategori.png",
+            "products": [
+                {
+                    "title": "Magnesium Citrat",
+                    "price": 179.95,
+                    "description": "Bidrager til en normal muskelfunktion, mindske træthed og udmattelse.",
+                    "quantity": 23,
+                    "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/magnesium-citrat.jpg?i=7287&w=300&h=400"
+                },
+                {
+                    "title": "Omnimin",
+                    "price": 179.95,
+                    "description": "Velafbalanceret multipræparat. 28 vitaminer, mineraler og andre næringsstoffer.",
+                    "quantity": 2,
+                    "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/omnimin.jpg?i=16621&w=300&h=400"
+                }
+            ],
+            "mostBoughtProducts": [
+                {
+                    "title": "sadads",
+                    "price": 232,
+                    "description": "sadsad",
+                    "quantity": 2,
+                    "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/omnimin.jpg?i=16621&w=300&h=400"
+                }
+            ]
         },
         {
-          "title": "Omnimin",
-          "price": 179.95,
-          "description": "Velafbalanceret multipræparat. 28 vitaminer, mineraler og andre næringsstoffer.",
-          "quantity": 2,
-          "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/omnimin.jpg?i=16621&w=300&h=400"
+            "title": "Brød og galetter",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/homoeopati-kategori.png",
+            "products": [],
+            "mostBoughtProducts": []
+        },
+        {
+            "title": "Sport og Protein",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/kosttilskud-kategori.png",
+            "products": [],
+            "mostBoughtProducts": []
+        },
+        {
+            "title": "Bønner, ris og pasta",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/medicinsk-udstyr-kategori.png",
+            "products": [],
+            "mostBoughtProducts": []
+        },
+        {
+            "title": "Gaveæsker",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/mineraler-kategori.png",
+            "products": [],
+            "mostBoughtProducts": []
+        },
+        {
+            "title": "Slanekostprodukter",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/naturlaegemidler-kategori.png",
+            "products": [],
+            "mostBoughtProducts": []
+        },
+        {
+            "title": "Olie, kosttilskud",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/olie-kostilskud-kategori.png",
+            "products": [],
+            "mostBoughtProducts": []
+        },
+        {
+            "title": "Olie, plante",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/olie-plante-kategori.png",
+            "products": [],
+            "mostBoughtProducts": []
+        },
+        {
+            "title": "Specialprodukter",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/specialprodukter-kategori.png",
+            "products": [],
+            "mostBoughtProducts": []
+        },
+        {
+            "title": "Mundbind og visirer",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/mundbind-og-visirer.png",
+            "products": [],
+            "mostBoughtProducts": []
         }
-      ]
-    },
-    {
-      "title": "Brød og galetter", 
-      "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/homoeopati-kategori.png",
-      "products": []
-    },
-    {
-      "title": "Sport og Protein",
-      "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/kosttilskud-kategori.png",
-      "products": []
-    },
-    {
-      "title":   "Bønner, ris og pasta",
-      "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/medicinsk-udstyr-kategori.png",
-      "products": []
-    },
-    {
-      "title":   "Gaveæsker",
-      "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/mineraler-kategori.png",
-      "products": []
-    },
-    {
-      "title":  "Slanekostprodukter",
-      "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/naturlaegemidler-kategori.png",
-      "products": []
-    },
-    {
-      "title": "Olie, kosttilskud",
-      "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/olie-kostilskud-kategori.png",
-      "products": []
-    },
-    {
-      "title": "Olie, plante",
-      "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/olie-plante-kategori.png",
-      "products": []
-    },
-    {
-      "title": "Specialprodukter",
-      "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/specialprodukter-kategori.png",
-      "products": []
-    },
-    {
-      "title": "Mundbind og visirer",
-      "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/mundbind-og-visirer.png",
-      "products": []
-    }
-  ]
+    ]
 }
 
 {
     "title": "Sundhed",
     "description": "Her finder du alle de gode tilskud, der kan understøtte og hjælpe krop og sind godt på vej til mere overskud og energi i hverdagen. Vitaminer og mineraler er altid et godt sted at starte, men er der behov for de lidt mere specialiserede tilskud, så finder du både homøopatiske midler, naturlægemidler og tilskud baseret på urter og planter, der kan hjælpe dig og din familie på vej.",
     "subcategories": [
-      {
-        "title": "Børn",
-        "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/boern-kategori.png",
-        "products": [
-          {
-            "title": "Magnesium Citrat",
-            "price": 179.95,
-            "description": "Bidrager til en normal muskelfunktion, mindske træthed og udmattelse.",
-            "quantity": 23,
-            "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/magnesium-citrat.jpg?i=7287&w=300&h=400"
-          },
-          {
-            "title": "Omnimin",
-            "price": 179.95,
-            "description": "Velafbalanceret multipræparat. 28 vitaminer, mineraler og andre næringsstoffer.",
-            "quantity": 2,
-            "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/omnimin.jpg?i=16621&w=300&h=400"
-          }
-        ]
-      },
-      {
-        "title": "Homoøopati",
-        "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/homoeopati-kategori.png",
-        "products": []
-      },
-      {
-        "title": "Kosttilskud",
-        "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/kosttilskud-kategori.png",
-        "products": []
-      },
-      {
-        "title": "Medicinsk Udstyr",
-        "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/medicinsk-udstyr-kategori.png",
-        "products": []
-      },
-      {
-        "title": "Mineraler",
-        "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/mineraler-kategori.png",
-        "products": []
-      },
-      {
-        "title": "Naturlægemidler",
-        "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/naturlaegemidler-kategori.png",
-        "products": []
-      },
-      {
-        "title": "Olie, kosttilskud",
-        "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/olie-kostilskud-kategori.png",
-        "products": []
-      },
-      {
-        "title": "Olie, plante",
-        "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/olie-plante-kategori.png",
-        "products": []
-      },
-      {
-        "title": "Specialprodukter",
-        "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/specialprodukter-kategori.png",
-        "products": []
-      },
-      {
-        "title": "Mundbind og visirer",
-        "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/mundbind-og-visirer.png",
-        "products": []
-      }
+        {
+            "title": "Børn",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/boern-kategori.png",
+            "products": [
+                {
+                    "title": "Magnesium Citrat",
+                    "price": 179.95,
+                    "description": "Bidrager til en normal muskelfunktion, mindske træthed og udmattelse.",
+                    "quantity": 23,
+                    "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/magnesium-citrat.jpg?i=7287&w=300&h=400"
+                },
+                {
+                    "title": "Omnimin",
+                    "price": 179.95,
+                    "description": "Velafbalanceret multipræparat. 28 vitaminer, mineraler og andre næringsstoffer.",
+                    "quantity": 2,
+                    "imageUrl": "https://helsam.tlcdn.dk/Tradelink/Modules/Images/omnimin.jpg?i=16621&w=300&h=400"
+                }
+            ]
+        },
+        {
+            "title": "Homoøopati",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/homoeopati-kategori.png",
+            "products": []
+        },
+        {
+            "title": "Kosttilskud",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/kosttilskud-kategori.png",
+            "products": []
+        },
+        {
+            "title": "Medicinsk Udstyr",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/medicinsk-udstyr-kategori.png",
+            "products": []
+        },
+        {
+            "title": "Mineraler",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/mineraler-kategori.png",
+            "products": []
+        },
+        {
+            "title": "Naturlægemidler",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/naturlaegemidler-kategori.png",
+            "products": []
+        },
+        {
+            "title": "Olie, kosttilskud",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/olie-kostilskud-kategori.png",
+            "products": []
+        },
+        {
+            "title": "Olie, plante",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/olie-plante-kategori.png",
+            "products": []
+        },
+        {
+            "title": "Specialprodukter",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/specialprodukter-kategori.png",
+            "products": []
+        },
+        {
+            "title": "Mundbind og visirer",
+            "imageUrl": "https://www.helsam.dk/-/media/helsam-dk/kategori-billeder/sundhed/mundbind-og-visirer.png",
+            "products": []
+        }
     ]
-  }
+}

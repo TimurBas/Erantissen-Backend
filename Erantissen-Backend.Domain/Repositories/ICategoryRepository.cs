@@ -6,7 +6,7 @@ namespace Erantissen_Backend.Domain.Repositories
     public interface ICategoryRepository
     {
         Task AddCategoryAsync(Category category);
-        Task UpdateCategoryAsync(string title, Category category);
+        Task UpdateCategoryAsync(Category category);
         Task DeleteCategoryAsync(string title);
     }
 }

@@ -1,11 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace Erantissen_Backend.App.Models
+﻿namespace Erantissen_Backend.App.Models
 {
     public class UpdateCategoryRequest
     {
-        public string Title { get; set; }
         public string Description { get; set; }
-        public List<SubcategoryModel> Subcategories { get; set; }
     }
 }

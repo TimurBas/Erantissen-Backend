@@ -9,12 +9,18 @@ namespace Erantissen_Backend.Query.Mappers
     {
         internal static CategoryReadDto MapDtoToReadDto(CategoryDto category)
         {
-            return new CategoryReadDto()
+            var categoryReadDto = new CategoryReadDto()
             {
-               Title = category.Title,
-               Description = category.Description,
-               Subcategories = category.Subcategories.Select(s => MapDomainToDto(s)).ToList()
+                Title = category.Title,
+                Description = category.Description
             };
+
+            if (category.Subcategories is null)
+                return categoryReadDto;
+
+            categoryReadDto.Subcategories = category.Subcategories.Select(s => MapDomainToDto(s)).ToList();
+
+            return categoryReadDto;
         }
 
         internal static List<CategoryReadDto> MapAll(List<CategoryDto> categories)
@@ -24,10 +30,19 @@ namespace Erantissen_Backend.Query.Mappers
 
         private static SubcategoryReadDto MapDomainToDto(SubcategoryDto subcategory)
         {
-            return new SubcategoryReadDto()
+            var subcategoryReadDto = new SubcategoryReadDto()
             {
-                Title = subcategory.Title
+                Title = subcategory.Title,
+                ImageUrl = subcategory.ImageUrl
             };
+
+            if (subcategory.MostBoughtProducts is not null)
+                subcategoryReadDto.MostBoughtProducts = ProductMapper.MapAllMostBought(subcategory.MostBoughtProducts);
+
+            if (subcategory.Products is not null)
+                subcategoryReadDto.Products = ProductMapper.MapAll(subcategory.Products);
+
+            return subcategoryReadDto;
         }
     }
 }

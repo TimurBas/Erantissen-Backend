@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Erantissen_Backend.Data.Migrations
 {
-    public partial class AASS : Migration
+    public partial class TE : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,52 +10,48 @@ namespace Erantissen_Backend.Data.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Title);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Hero",
                 columns: table => new
                 {
-                    ImageNumber = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Heading = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Paragraph = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ButtonText = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Heading = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Paragraph = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ButtonText = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DiscountText = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DiscountAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Discount = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Hero", x => x.ImageNumber);
+                    table.PrimaryKey("PK_Hero", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Subcategories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                    CategoryTitle = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Subcategories", x => x.Id);
+                    table.PrimaryKey("PK_Subcategories", x => x.Title);
                     table.ForeignKey(
-                        name: "FK_Subcategories_Categories_CategoryId",
-                        column: x => x.CategoryId,
+                        name: "FK_Subcategories_Categories_CategoryTitle",
+                        column: x => x.CategoryTitle,
                         principalTable: "Categories",
-                        principalColumn: "Id",
+                        principalColumn: "Title",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -65,63 +60,59 @@ namespace Erantissen_Backend.Data.Migrations
                 columns: table => new
                 {
                     Title = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SubcategoryId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SubcategoryId1 = table.Column<int>(type: "int", nullable: true)
+                    SubcategoryTitle = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MostBoughtProducts", x => x.Title);
                     table.ForeignKey(
-                        name: "FK_MostBoughtProducts_Subcategories_SubcategoryId1",
-                        column: x => x.SubcategoryId1,
+                        name: "FK_MostBoughtProducts_Subcategories_SubcategoryTitle",
+                        column: x => x.SubcategoryTitle,
                         principalTable: "Subcategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Title",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SubcategoryId = table.Column<int>(type: "int", nullable: false)
+                    SubcategoryTitle = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.Title);
                     table.ForeignKey(
-                        name: "FK_Products_Subcategories_SubcategoryId",
-                        column: x => x.SubcategoryId,
+                        name: "FK_Products_Subcategories_SubcategoryTitle",
+                        column: x => x.SubcategoryTitle,
                         principalTable: "Subcategories",
-                        principalColumn: "Id",
+                        principalColumn: "Title",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_MostBoughtProducts_SubcategoryId1",
+                name: "IX_MostBoughtProducts_SubcategoryTitle",
                 table: "MostBoughtProducts",
-                column: "SubcategoryId1");
+                column: "SubcategoryTitle");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_SubcategoryId",
+                name: "IX_Products_SubcategoryTitle",
                 table: "Products",
-                column: "SubcategoryId");
+                column: "SubcategoryTitle");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Subcategories_CategoryId",
+                name: "IX_Subcategories_CategoryTitle",
                 table: "Subcategories",
-                column: "CategoryId");
+                column: "CategoryTitle");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

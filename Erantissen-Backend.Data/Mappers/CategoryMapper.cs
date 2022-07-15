@@ -18,7 +18,6 @@ namespace Erantissen_Backend.Data.Mappers
 
         internal static void UpdateDtoFields(CategoryDto categoryDto, Category category)
         {
-            categoryDto.Title = category.Title;
             categoryDto.Description = category.Description;
         }
 
@@ -28,7 +27,8 @@ namespace Erantissen_Backend.Data.Mappers
             {
                 Title = subcategory.Title,
                 ImageUrl = subcategory.ImageUrl,
-                Products = subcategory.Products.Select(p => ProductMapper.MapDomainToDto(p)).ToList()
+                Products = subcategory.Products.Select(p => ProductMapper.MapDomainToDto(p)).ToList(),
+                MostBoughtProducts = subcategory.MostBoughtProducts.Select(mbp => ProductMapper.MapDomainToMostBoughtDto(mbp)).ToList()
             };
         }
     }
