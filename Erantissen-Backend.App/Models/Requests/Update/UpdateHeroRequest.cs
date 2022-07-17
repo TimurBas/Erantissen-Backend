@@ -1,4 +1,4 @@
-﻿namespace Erantissen_Backend.App.Models
+﻿namespace Erantissen_Backend.App.Models.Requests.Update
 {
     public class UpdateHeroRequest
     {

@@ -1,4 +1,4 @@
-﻿namespace Erantissen_Backend.Query
+﻿namespace Erantissen_Backend.Query.Models
 {
     public class ProductReadDto
     {

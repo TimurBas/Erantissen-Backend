@@ -1,5 +1,6 @@
 ﻿using Erantissen_Backend.App.Mappers;
-using Erantissen_Backend.App.Models;
+using Erantissen_Backend.App.Models.Requests.Create;
+using Erantissen_Backend.App.Models.Requests.Update;
 using Erantissen_Backend.App.Services.Interfaces;
 using Erantissen_Backend.Domain.Entities;
 using Erantissen_Backend.Domain.Repositories;

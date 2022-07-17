@@ -1,7 +1,8 @@
-﻿using Erantissen_Backend.App.Models;
+﻿using Erantissen_Backend.App.Models.Requests.Create;
+using Erantissen_Backend.App.Models.Requests.Update;
 using System.Threading.Tasks;
 
-namespace Erantissen_Backend.App.Services
+namespace Erantissen_Backend.App.Services.Interfaces
 {
     public interface ICategoryService
     {

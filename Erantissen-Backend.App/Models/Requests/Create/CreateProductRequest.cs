@@ -1,4 +1,4 @@
-﻿namespace Erantissen_Backend.App.Models
+﻿namespace Erantissen_Backend.App.Models.Requests.Create
 {
     public class CreateProductRequest
     {

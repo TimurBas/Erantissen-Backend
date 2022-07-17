@@ -1,6 +1,6 @@
 ﻿using Erantissen_Backend.Domain.Entities;
 
-namespace Erantissen_Backend.App.Models
+namespace Erantissen_Backend.App.Models.Requests.Update
 {
     public class UpdateProductRequest
     {

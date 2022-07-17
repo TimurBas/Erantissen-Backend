@@ -1,7 +1,8 @@
-﻿using Erantissen_Backend.App.Models;
-using Erantissen_Backend.App.Services;
-using Erantissen_Backend.Query;
-using Erantissen_Backend.Query.Queries;
+﻿using Erantissen_Backend.App.Models.Requests.Create;
+using Erantissen_Backend.App.Models.Requests.Update;
+using Erantissen_Backend.App.Services.Interfaces;
+using Erantissen_Backend.Query.Models;
+using Erantissen_Backend.Query.Queries.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;

@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Erantissen_Backend.Query.Models;
+using System.Collections.Generic;
 
-namespace Erantissen_Backend.Query.Queries
+namespace Erantissen_Backend.Query.Queries.Interfaces
 {
     public interface IProductQuery
     {

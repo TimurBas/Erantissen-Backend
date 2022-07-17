@@ -1,5 +1,7 @@
 ﻿using Erantissen_Backend.Data.Contexts;
 using Erantissen_Backend.Query.Mappers;
+using Erantissen_Backend.Query.Models;
+using Erantissen_Backend.Query.Queries.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
