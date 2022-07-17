@@ -18,7 +18,7 @@ namespace Erantissen_Backend.App.Services
         }
         public async Task CreateCategoryAsync(CreateCategoryRequest r)
         {
-            var category = new Category(r.Title, r.Description, CategoryMapper.MapSubcategories(r.Subcategories));
+            var category = new Category(r.Title, r.Description, SubcategoryMapper.MapSubcategories(r.Subcategories));
             await _repo.AddCategoryAsync(category);
         }
 

@@ -15,5 +15,11 @@ namespace Erantissen_Backend.Domain.Entities
             Products = products;
             MostBoughtProducts = mostBoughtProducts;
         }
+
+        public Subcategory(string title, string imageUrl)
+        {
+            Title = title;
+            ImageUrl = imageUrl;
+        }
     }
 }

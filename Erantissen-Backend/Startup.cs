@@ -1,8 +1,10 @@
 using Erantissen_Backend.App.Services;
+using Erantissen_Backend.App.Services.Interfaces;
 using Erantissen_Backend.Data.Contexts;
 using Erantissen_Backend.Data.Repositories;
 using Erantissen_Backend.Domain.Repositories;
 using Erantissen_Backend.Query.Queries;
+using Erantissen_Backend.Query.Queries.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -43,6 +45,9 @@ namespace Erantissen_Backend
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICategoryQuery, CategoryQuery>();
+            services.AddScoped<ISubcategoryRepository, SubcategoryRepository>();
+            services.AddScoped<ISubcategoryService, SubcategoryService>();
+            services.AddScoped<ISubcategoryQuery, SubcategoryQuery>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
