@@ -6,19 +6,22 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
+#nullable disable
+
 namespace Erantissen_Backend.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220715160431_TE")]
-    partial class TE
+    [Migration("20220717174059_OOSEO")]
+    partial class OOSEO
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.17")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.CategoryDto", b =>
                 {
@@ -30,15 +33,16 @@ namespace Erantissen_Backend.Data.Migrations
 
                     b.HasKey("Title");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.HeroDto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ButtonText")
                         .HasColumnType("nvarchar(max)");
@@ -60,7 +64,7 @@ namespace Erantissen_Backend.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Hero");
+                    b.ToTable("Hero", (string)null);
                 });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.MostBoughtProductDto", b =>
@@ -87,7 +91,7 @@ namespace Erantissen_Backend.Data.Migrations
 
                     b.HasIndex("SubcategoryTitle");
 
-                    b.ToTable("MostBoughtProducts");
+                    b.ToTable("MostBoughtProducts", (string)null);
                 });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.ProductDto", b =>
@@ -114,7 +118,7 @@ namespace Erantissen_Backend.Data.Migrations
 
                     b.HasIndex("SubcategoryTitle");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.SubcategoryDto", b =>
@@ -132,7 +136,7 @@ namespace Erantissen_Backend.Data.Migrations
 
                     b.HasIndex("CategoryTitle");
 
-                    b.ToTable("Subcategories");
+                    b.ToTable("Subcategories", (string)null);
                 });
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.MostBoughtProductDto", b =>

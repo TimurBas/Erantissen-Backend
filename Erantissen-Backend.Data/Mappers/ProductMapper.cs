@@ -5,7 +5,7 @@ namespace Erantissen_Backend.Data.Mappers
 {
     public static class ProductMapper
     {
-        internal static ProductDto MapDomainToDto(Product product)
+        internal static ProductDto MapDomainToDto(Product product, string subcategoryTitle)
         {
             return new ProductDto()
             {
@@ -14,10 +14,11 @@ namespace Erantissen_Backend.Data.Mappers
                 Description = product.Description,
                 Quantity = product.Quantity,
                 ImageUrl = product.ImageUrl,
+                SubcategoryTitle = subcategoryTitle,
             };
         }
 
-        internal static MostBoughtProductDto MapDomainToMostBoughtDto(Product product)
+        internal static MostBoughtProductDto MapDomainToMostBoughtDto(Product product, string subcategoryTitle)
         {
             return new MostBoughtProductDto()
             {
@@ -26,6 +27,7 @@ namespace Erantissen_Backend.Data.Mappers
                 Description = product.Description,
                 Quantity = product.Quantity,
                 ImageUrl = product.ImageUrl,
+                SubcategoryTitle = subcategoryTitle,
             };
         }
 

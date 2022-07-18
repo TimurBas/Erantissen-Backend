@@ -10,26 +10,27 @@ namespace Erantissen_Backend.Data.Repositories
     public class ProductRepository : IProductRepository
     {
         private readonly Context _context;
-
         public ProductRepository(Context context)
         {
             _context = context;
         }
-
-        public async Task AddProductAsync(Product product)
+        public async Task AddProductAsync(Product product, string subcategoryTitle)
         {
-            var mappedProduct = ProductMapper.MapDomainToDto(product);
+            // If subcategory does not exist
+            if (!_context.Subcategories.Any(sc => sc.Title.Equals(subcategoryTitle)))
+                return;
+
+            var mappedProduct = ProductMapper.MapDomainToDto(product, subcategoryTitle);
+
             await _context.Products.AddAsync(mappedProduct);
             await _context.SaveChangesAsync();
         }
-
         public async Task UpdateProductAsync(Product product)
         {
             var productDto = _context.Products.Where(p => p.Title.Equals(product.Title)).FirstOrDefault();
             ProductMapper.UpdateDtoFields(productDto, product);
             await _context.SaveChangesAsync();
         }
-
         public async Task DeleteProductAsync(string title)
         {
             var product = _context.Products.Where(p => p.Title.Equals(title)).FirstOrDefault();

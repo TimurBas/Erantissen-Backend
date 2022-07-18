@@ -18,8 +18,11 @@ namespace Erantissen_Backend.App.Services
 
         public async Task CreateSubcategoryAsync(CreateSubcategoryRequest r)
         {
-            var subcategory = new Subcategory(r.Title, r.ImageUrl, ProductMapper.MapProducts(r.Products), ProductMapper.MapProducts(r.MostBoughtProducts));
-            await _repo.AddSubcategoryAsync(subcategory);
+            var products = ProductMapper.MapProducts(r.Products);
+            var mostBoughtProducts = ProductMapper.MapProducts(r.MostBoughtProducts);
+            var subcategory = new Subcategory(r.Title, r.ImageUrl, products, mostBoughtProducts);
+
+            await _repo.AddSubcategoryAsync(subcategory, r.CategoryTitle);
         }
         public async Task UpdateSubcategoryAsync(string title, UpdateSubcategoryRequest r)
         {

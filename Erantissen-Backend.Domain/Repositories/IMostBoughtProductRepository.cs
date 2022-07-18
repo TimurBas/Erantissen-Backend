@@ -5,7 +5,7 @@ namespace Erantissen_Backend.Domain.Repositories
 {
     public interface IMostBoughtProductRepository
     {
-        Task AddProductAsync(Product product);
+        Task AddProductAsync(Product product, string subcategoryTitle);
         Task UpdateProductAsync(Product product);
         Task DeleteProductAsync(string title);
     }

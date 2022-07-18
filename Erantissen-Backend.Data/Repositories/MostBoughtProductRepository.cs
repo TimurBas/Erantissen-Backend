@@ -10,25 +10,26 @@ namespace Erantissen_Backend.Data.Repositories
     public class MostBoughtProductRepository : IMostBoughtProductRepository
     {
         private readonly Context _context;
-
         public MostBoughtProductRepository(Context context)
         {
             _context = context;
         }
-        public async Task AddProductAsync(Product product)
+        public async Task AddProductAsync(Product product, string subcategoryTitle)
         {
-            var mappedProduct = ProductMapper.MapDomainToMostBoughtDto(product);
+            // If subcategory does not exist
+            if (!_context.Subcategories.Any(sc => sc.Title.Equals(subcategoryTitle)))
+                return;
+
+            var mappedProduct = ProductMapper.MapDomainToMostBoughtDto(product, subcategoryTitle);
             await _context.MostBoughtProducts.AddAsync(mappedProduct);
             await _context.SaveChangesAsync();
         }
-
         public async Task UpdateProductAsync(Product product)
         {
             var productDto = _context.MostBoughtProducts.Where(p => p.Title.Equals(product.Title)).FirstOrDefault();
             ProductMapper.UpdateMostBoughtDtoFields(productDto, product);
             await _context.SaveChangesAsync();
         }
-
         public async Task DeleteProductAsync(string title)
         {
             var product = _context.MostBoughtProducts.Where(p => p.Title.Equals(title)).FirstOrDefault();

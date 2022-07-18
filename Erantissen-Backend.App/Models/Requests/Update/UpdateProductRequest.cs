@@ -1,6 +1,4 @@
-﻿using Erantissen_Backend.Domain.Entities;
-
-namespace Erantissen_Backend.App.Models.Requests.Update
+﻿namespace Erantissen_Backend.App.Models.Requests.Update
 {
     public class UpdateProductRequest
     {
@@ -9,6 +7,6 @@ namespace Erantissen_Backend.App.Models.Requests.Update
         public string Description { get; set; }
         public int Quantity { get; set; }
         public string ImageUrl { get; set; }
-        public string Category { get; set; }
+        public string CategoryTitle { get; set; }
     }
 }

@@ -19,6 +19,6 @@ namespace Erantissen_Backend.Domain.Entities
         {
             Title = title;
             Description = description;
-        }
+        }   
     }
 }

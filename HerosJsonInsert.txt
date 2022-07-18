@@ -4,7 +4,7 @@
   "paragraph": "Probiotic Classic 10 med 15 udvalgte bakteriestammer i pulverform. Levende fra indtagelse og veldokumenteret overlevelse af stammerne i mave/tarm-kanalen.",
   "buttonText": "Find dem her",
   "discountText": "Spar",
-  "discountAmount": 26
+  "discount": "26"
 }
 
 {
@@ -13,6 +13,6 @@
   "paragraph": "Unikt B-vitaminkompleks, som giver kroppen energi i pressede perioder. B-vitaminerne B1, B2, B3,5, B6 og B12 samt vitamin C og magnesium bidrager alle til at vedligeholde et normalt energistofskifte.",
   "buttonText": "Køb dem her",
   "discountText": "Spar",
-  "discountAmount": 10
+  "discount": "10"
 }
 

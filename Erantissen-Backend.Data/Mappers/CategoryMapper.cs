@@ -12,7 +12,7 @@ namespace Erantissen_Backend.Data.Mappers
             {
                 Title = category.Title,
                 Description = category.Description,
-                Subcategories = category.Subcategories.Select(sc => SubcategoryMapper.MapDomainToDto(sc)).ToList()
+                Subcategories = category.Subcategories.Select(sc => SubcategoryMapper.MapDomainToDto(sc, category.Title)).ToList()
             };
         }
 

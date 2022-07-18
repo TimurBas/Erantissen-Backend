@@ -15,13 +15,16 @@ namespace Erantissen_Backend.Data.Repositories
         {
             _context = context;
         }
-        public async Task AddSubcategoryAsync(Subcategory subcategory)
+        public async Task AddSubcategoryAsync(Subcategory subcategory, string categoryTitle)
         {
-            var mappedSubcategory = SubcategoryMapper.MapDomainToDto(subcategory);
+            // if category does not exist
+            if (!_context.Categories.Any(c => c.Title.Equals(categoryTitle)))
+                return;
+
+            var mappedSubcategory = SubcategoryMapper.MapDomainToDto(subcategory, categoryTitle);
             await _context.Subcategories.AddAsync(mappedSubcategory);
             await _context.SaveChangesAsync();
         }
-
         public async Task UpdateSubcategoryAsync(Subcategory subcategory)
         {
             var subcategoryDto = _context.Subcategories.Where(c => c.Title.Equals(subcategory.Title)).FirstOrDefault();

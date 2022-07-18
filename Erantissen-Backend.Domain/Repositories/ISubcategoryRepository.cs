@@ -5,7 +5,7 @@ namespace Erantissen_Backend.Domain.Repositories
 {
     public interface ISubcategoryRepository
     {
-        Task AddSubcategoryAsync(Subcategory subcategory);
+        Task AddSubcategoryAsync(Subcategory subcategory, string categoryTitle);
         Task UpdateSubcategoryAsync(Subcategory subcategory);
         Task DeleteSubcategoryAsync(string title);
     }

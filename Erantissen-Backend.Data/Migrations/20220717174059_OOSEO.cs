@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
+#nullable disable
+
 namespace Erantissen_Backend.Data.Migrations
 {
-    public partial class TE : Migration
+    public partial class OOSEO : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
