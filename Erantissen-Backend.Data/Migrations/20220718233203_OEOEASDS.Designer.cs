@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Erantissen_Backend.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220717174059_OOSEO")]
-    partial class OOSEO
+    [Migration("20220718233203_OEOEASDS")]
+    partial class OEOEASDS
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

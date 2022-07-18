@@ -12,7 +12,8 @@ namespace Erantissen_Backend.Query.Mappers
             var subcategoryReadDto = new SubcategoryReadDto()
             {
                 Title = subcategory.Title,
-                ImageUrl = subcategory.ImageUrl
+                ImageUrl = subcategory.ImageUrl,
+                CategoryTitle = subcategory.CategoryTitle
             };
 
             if (subcategory.MostBoughtProducts is not null)

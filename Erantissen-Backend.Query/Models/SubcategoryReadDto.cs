@@ -8,5 +8,6 @@ namespace Erantissen_Backend.Query.Models
         public string ImageUrl { get; set; }
         public List<ProductReadDto> Products { get; set; }
         public List<ProductReadDto> MostBoughtProducts { get; set; }
+        public string CategoryTitle { get; set; }
     }
 }
