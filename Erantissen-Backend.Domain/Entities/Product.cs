@@ -8,7 +8,6 @@
         public string Description { get; set; }
         public int Quantity { get; set; }
         public string ImageUrl { get; set; }
-        public Subcategory Subcategory { get; set; }
 
         public Product(string title, decimal price, string description, int quantity, string imageUrl)
         {

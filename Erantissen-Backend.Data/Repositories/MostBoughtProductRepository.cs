@@ -16,11 +16,13 @@ namespace Erantissen_Backend.Data.Repositories
         }
         public async Task AddProductAsync(Product product, string subcategoryTitle)
         {
-            // If subcategory does not exist
-            if (!_context.Subcategories.Any(sc => sc.Title.Equals(subcategoryTitle)))
+            var subcategory = _context.Subcategories.Find(subcategoryTitle);
+
+            if (subcategory is null)
                 return;
 
             var mappedProduct = ProductMapper.MapDomainToMostBoughtDto(product, subcategoryTitle);
+
             await _context.MostBoughtProducts.AddAsync(mappedProduct);
             await _context.SaveChangesAsync();
         }

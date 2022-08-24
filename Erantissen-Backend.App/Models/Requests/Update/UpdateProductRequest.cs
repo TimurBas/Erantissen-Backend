@@ -7,6 +7,7 @@
         public string Description { get; set; }
         public int Quantity { get; set; }
         public string ImageUrl { get; set; }
+        public string SubcategoryTïtle { get; set; }
         public string CategoryTitle { get; set; }
     }
 }

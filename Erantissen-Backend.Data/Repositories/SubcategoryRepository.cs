@@ -17,11 +17,13 @@ namespace Erantissen_Backend.Data.Repositories
         }
         public async Task AddSubcategoryAsync(Subcategory subcategory, string categoryTitle)
         {
-            // if category does not exist
-            if (!_context.Categories.Any(c => c.Title.Equals(categoryTitle)))
+            var category = _context.Categories.Find(categoryTitle);
+
+            if (category is null)
                 return;
 
             var mappedSubcategory = SubcategoryMapper.MapDomainToDto(subcategory, categoryTitle);
+
             await _context.Subcategories.AddAsync(mappedSubcategory);
             await _context.SaveChangesAsync();
         }

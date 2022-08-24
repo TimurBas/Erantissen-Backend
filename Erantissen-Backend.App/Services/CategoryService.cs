@@ -1,6 +1,4 @@
-﻿using Erantissen_Backend.App.Factories;
-using Erantissen_Backend.App.Mappers;
-using Erantissen_Backend.App.Models.Requests.Create;
+﻿using Erantissen_Backend.App.Models.Requests.Create;
 using Erantissen_Backend.App.Models.Requests.Update;
 using Erantissen_Backend.App.Services.Interfaces;
 using Erantissen_Backend.Domain.Entities;
@@ -19,7 +17,7 @@ namespace Erantissen_Backend.App.Services
         }
         public async Task CreateCategoryAsync(CreateCategoryRequest r)
         {
-            var category = CategoryFactory.CreateCategory(r.Title, r.Description, r.Subcategories);
+            var category = new Category(r.Title, r.Description);
             await _repo.AddCategoryAsync(category);
         }
 

@@ -1,5 +1,4 @@
-﻿using Erantissen_Backend.App.Mappers;
-using Erantissen_Backend.App.Models.Requests.Create;
+﻿using Erantissen_Backend.App.Models.Requests.Create;
 using Erantissen_Backend.App.Models.Requests.Update;
 using Erantissen_Backend.App.Services.Interfaces;
 using Erantissen_Backend.Domain.Entities;
@@ -18,10 +17,7 @@ namespace Erantissen_Backend.App.Services
 
         public async Task CreateSubcategoryAsync(CreateSubcategoryRequest r)
         {
-            var products = ProductMapper.MapProducts(r.Products);
-            var mostBoughtProducts = ProductMapper.MapProducts(r.MostBoughtProducts);
-            var subcategory = new Subcategory(r.Title, r.ImageUrl, products, mostBoughtProducts);
-
+            var subcategory = new Subcategory(r.Title, r.ImageUrl);
             await _repo.AddSubcategoryAsync(subcategory, r.CategoryTitle);
         }
         public async Task UpdateSubcategoryAsync(string title, UpdateSubcategoryRequest r)

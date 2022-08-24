@@ -18,7 +18,7 @@ namespace Erantissen_Backend.Query.Queries
         }
         public List<ProductReadDto> GetAll()
         {
-            var products = _context.MostBoughtProducts.AsNoTracking().ToList();
+            var products = _context.MostBoughtProducts.AsNoTracking().Include(mbp => mbp.Subcategory).ToList();
             var mappedProducts = ProductMapper.MapAllMostBought(products);
             return mappedProducts;
         }

@@ -32,7 +32,7 @@ namespace Erantissen_Backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Erantissen_Backend", Version = "v1" });
             });
-            services.AddScoped<Context>();
+            services.AddDbContext<Context>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductQuery, ProductQuery>();

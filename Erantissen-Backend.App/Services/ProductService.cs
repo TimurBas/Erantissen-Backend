@@ -19,7 +19,7 @@ namespace Erantissen_Backend.App.Services
         public async Task CreateProduct(CreateProductRequest r)
         {
             var product = new Product(r.Title, r.Price, r.Description, r.Quantity, r.ImageUrl);
-            await _repo.AddProductAsync(product, r.CategoryTitle);
+            await _repo.AddProductAsync(product, r.SubcategoryTitle);
         }
         public async Task UpdateProduct(UpdateProductRequest r)
         {

@@ -8,5 +8,6 @@
         public int Quantity { get; set; }
         public string ImageUrl { get; set; }
         public string SubcategoryTitle { get; set; }
+        public string CategoryTitle { get; set; }
     }
 }

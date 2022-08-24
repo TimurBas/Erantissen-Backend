@@ -12,8 +12,6 @@ namespace Erantissen_Backend.Data.Mappers
             {
                 Title = subcategory.Title,
                 ImageUrl = subcategory.ImageUrl,
-                Products = subcategory.Products.Select(p => ProductMapper.MapDomainToDto(p, subcategory.Title)).ToList(),
-                MostBoughtProducts = subcategory.MostBoughtProducts.Select(mbp => ProductMapper.MapDomainToMostBoughtDto(mbp, subcategory.Title)).ToList(),
                 CategoryTitle = categoryTitle,
             };
         }
