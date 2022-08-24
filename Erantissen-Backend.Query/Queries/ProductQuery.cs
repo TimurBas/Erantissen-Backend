@@ -30,5 +30,17 @@ namespace Erantissen_Backend.Query.Queries
             var mappedProducts = ProductMapper.MapAll(products);
             return mappedProducts;
         }
+
+        public List<ProductReadDto> GetMostBoughtProducts()
+        {
+            var products = _context.Products
+                .AsNoTracking()
+                .Include(p => p.Subcategory)
+                .OrderByDescending(p => p.BoughtNoOfTimes)
+                .Take(4)
+                .ToList();
+            var mappedProducts = ProductMapper.MapAll(products);
+            return mappedProducts;
+        }
     }
 }

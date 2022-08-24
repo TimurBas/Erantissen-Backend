@@ -16,9 +16,6 @@ namespace Erantissen_Backend.Query.Mappers
                 CategoryTitle = subcategory.CategoryTitle
             };
 
-            if (subcategory.MostBoughtProducts is not null)
-                subcategoryReadDto.MostBoughtProducts = ProductMapper.MapAllMostBought(subcategory.MostBoughtProducts);
-
             if (subcategory.Products is not null)
                 subcategoryReadDto.Products = ProductMapper.MapAll(subcategory.Products);
 

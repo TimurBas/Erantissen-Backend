@@ -7,7 +7,6 @@ namespace Erantissen_Backend.Data.Models
         public string Title { get; set; }
         public string ImageUrl { get; set; }
         public List<ProductDto> Products { get; set; }
-        public List<MostBoughtProductDto> MostBoughtProducts { get; set; }
         public string CategoryTitle { get; set; }
         public CategoryDto Category { get; set; }
     }

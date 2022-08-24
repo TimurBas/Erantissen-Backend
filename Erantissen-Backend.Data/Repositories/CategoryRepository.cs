@@ -32,8 +32,7 @@ namespace Erantissen_Backend.Data.Repositories
             var category = _context.Categories
                 .Include(c => c.Subcategories)
                     .ThenInclude(sc => sc.Products)
-                .Include(c => c.Subcategories)
-                    .ThenInclude(sc => sc.MostBoughtProducts).Where(c => c.Title.Equals(title)).FirstOrDefault();
+                .FirstOrDefault();
             _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
         }

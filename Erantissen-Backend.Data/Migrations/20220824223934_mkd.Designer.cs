@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Erantissen_Backend.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220824214348_mkadas")]
-    partial class mkadas
+    [Migration("20220824223934_mkd")]
+    partial class mkd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -67,37 +67,13 @@ namespace Erantissen_Backend.Data.Migrations
                     b.ToTable("Hero", (string)null);
                 });
 
-            modelBuilder.Entity("Erantissen_Backend.Data.Models.MostBoughtProductDto", b =>
-                {
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SubcategoryTitle")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Title");
-
-                    b.HasIndex("SubcategoryTitle");
-
-                    b.ToTable("MostBoughtProducts", (string)null);
-                });
-
             modelBuilder.Entity("Erantissen_Backend.Data.Models.ProductDto", b =>
                 {
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("BoughtNoOfTimes")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -139,16 +115,6 @@ namespace Erantissen_Backend.Data.Migrations
                     b.ToTable("Subcategories", (string)null);
                 });
 
-            modelBuilder.Entity("Erantissen_Backend.Data.Models.MostBoughtProductDto", b =>
-                {
-                    b.HasOne("Erantissen_Backend.Data.Models.SubcategoryDto", "Subcategory")
-                        .WithMany("MostBoughtProducts")
-                        .HasForeignKey("SubcategoryTitle")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("Subcategory");
-                });
-
             modelBuilder.Entity("Erantissen_Backend.Data.Models.ProductDto", b =>
                 {
                     b.HasOne("Erantissen_Backend.Data.Models.SubcategoryDto", "Subcategory")
@@ -176,8 +142,6 @@ namespace Erantissen_Backend.Data.Migrations
 
             modelBuilder.Entity("Erantissen_Backend.Data.Models.SubcategoryDto", b =>
                 {
-                    b.Navigation("MostBoughtProducts");
-
                     b.Navigation("Products");
                 });
 #pragma warning restore 612, 618

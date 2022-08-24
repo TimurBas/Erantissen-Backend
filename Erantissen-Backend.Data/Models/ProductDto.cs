@@ -7,6 +7,7 @@
         public string Description { get; set; }
         public int Quantity { get; set; }
         public string ImageUrl { get; set; }
+        public int BoughtNoOfTimes { get; set; }
         public string SubcategoryTitle { get; set; }
         public SubcategoryDto Subcategory { get; set; }
     }

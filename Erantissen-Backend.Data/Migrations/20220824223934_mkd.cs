@@ -4,7 +4,7 @@
 
 namespace Erantissen_Backend.Data.Migrations
 {
-    public partial class mkadas : Migration
+    public partial class mkd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -58,28 +58,6 @@ namespace Erantissen_Backend.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MostBoughtProducts",
-                columns: table => new
-                {
-                    Title = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SubcategoryTitle = table.Column<string>(type: "nvarchar(450)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MostBoughtProducts", x => x.Title);
-                    table.ForeignKey(
-                        name: "FK_MostBoughtProducts_Subcategories_SubcategoryTitle",
-                        column: x => x.SubcategoryTitle,
-                        principalTable: "Subcategories",
-                        principalColumn: "Title",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
                 {
@@ -88,6 +66,7 @@ namespace Erantissen_Backend.Data.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BoughtNoOfTimes = table.Column<int>(type: "int", nullable: false),
                     SubcategoryTitle = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
@@ -100,11 +79,6 @@ namespace Erantissen_Backend.Data.Migrations
                         principalColumn: "Title",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MostBoughtProducts_SubcategoryTitle",
-                table: "MostBoughtProducts",
-                column: "SubcategoryTitle");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_SubcategoryTitle",
@@ -121,9 +95,6 @@ namespace Erantissen_Backend.Data.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Hero");
-
-            migrationBuilder.DropTable(
-                name: "MostBoughtProducts");
 
             migrationBuilder.DropTable(
                 name: "Products");

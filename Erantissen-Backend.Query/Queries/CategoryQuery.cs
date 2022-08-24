@@ -20,9 +20,7 @@ namespace Erantissen_Backend.Query.Queries
         {
             var categories = _context.Categories.
                 Include(c => c.Subcategories)
-                    .ThenInclude(sc => sc.Products)
-                .Include(c => c.Subcategories)
-                    .ThenInclude(sc => sc.MostBoughtProducts).AsNoTracking().ToList();
+                    .ThenInclude(sc => sc.Products).AsNoTracking().ToList();
             var mappedCategories = CategoryMapper.MapAll(categories);
             return mappedCategories;
         }
@@ -32,8 +30,6 @@ namespace Erantissen_Backend.Query.Queries
             var category = _context.Categories
                 .Include(c => c.Subcategories)
                     .ThenInclude(sc => sc.Products)
-                .Include(c => c.Subcategories)
-                    .ThenInclude(sc => sc.MostBoughtProducts)
                 .AsNoTracking().Where(c => c.Title.ToLower().Equals(title.ToLower())).FirstOrDefault();
             var mappedCategory = CategoryMapper.MapDtoToReadDto(category);
             return mappedCategory;

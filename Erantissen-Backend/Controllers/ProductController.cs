@@ -36,6 +36,13 @@ namespace Erantissen_Backend.Controllers
             return Ok(products);
         }
 
+        [HttpGet("/[controller]/MostBoughtProducts")]
+        public ActionResult<List<ProductReadDto>> GetMostBoughtProducts()
+        {
+            var mostBoughtProducts = _query.GetMostBoughtProducts();
+            return Ok(mostBoughtProducts);
+        }
+
         [HttpPost()]
         public async Task<ActionResult> CreateProduct([FromBody] CreateProductRequest request)
         {

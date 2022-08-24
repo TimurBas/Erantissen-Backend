@@ -7,5 +7,6 @@ namespace Erantissen_Backend.Query.Queries.Interfaces
     {
         ProductReadDto GetProduct(string title);
         List<ProductReadDto> GetAll();
+        List<ProductReadDto> GetMostBoughtProducts();
     }
 }

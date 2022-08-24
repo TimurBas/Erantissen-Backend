@@ -26,24 +26,5 @@ namespace Erantissen_Backend.Query.Mappers
         {
             return products.Select(p => MapDtoToReadDto(p)).ToList();
         }
-
-        internal static ProductReadDto MapMostBoughtDtoToReadDto(MostBoughtProductDto product)
-        {
-            return new ProductReadDto()
-            {
-                Title = product.Title,
-                Price = product.Price,
-                Description = product.Description,
-                Quantity = product.Quantity,
-                ImageUrl = product.ImageUrl,
-                SubcategoryTitle = product.SubcategoryTitle,
-                CategoryTitle = product.Subcategory.CategoryTitle
-            };
-        }
-
-        internal static List<ProductReadDto> MapAllMostBought(List<MostBoughtProductDto> products)
-        {
-            return products.Select(p => MapMostBoughtDtoToReadDto(p)).ToList();
-        }
     }
 }

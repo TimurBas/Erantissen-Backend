@@ -20,7 +20,6 @@ namespace Erantissen_Backend.Query.Queries
         {
             var subcategories = _context.Subcategories
                 .Include(sc => sc.Products)
-                .Include(sc => sc.MostBoughtProducts)
                 .AsNoTracking()
                 .ToList();
             var mappedSubcategories = subcategories.Select(sc => SubcategoryMapper.MapDtoToReadDto(sc)).ToList();
@@ -31,7 +30,6 @@ namespace Erantissen_Backend.Query.Queries
         {
             var subcategory = _context.Subcategories
                 .Include(sc => sc.Products)
-                .Include(sc => sc.MostBoughtProducts)
                 .AsNoTracking()
                 .Where(sc => sc.Title.Equals(title)).FirstOrDefault();
             var mappedSubcategory = SubcategoryMapper.MapDtoToReadDto(subcategory);
@@ -42,7 +40,6 @@ namespace Erantissen_Backend.Query.Queries
         {
             var subcategories = _context.Subcategories
                 .Include(sc => sc.Products)
-                .Include(sc => sc.MostBoughtProducts)
                 .AsNoTracking()
                 .Where(sc => sc.CategoryTitle.Equals(categoryTitle)).ToList();
             var mappedSubcategories = subcategories.Select(sc => SubcategoryMapper.MapDtoToReadDto(sc)).ToList();

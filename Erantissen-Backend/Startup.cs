@@ -39,15 +39,14 @@ namespace Erantissen_Backend
             services.AddScoped<IHeroRepository, HeroRepository>();
             services.AddScoped<IHeroService, HeroService>();
             services.AddScoped<IHeroQuery, HeroQuery>();
-            services.AddScoped<IMostBoughtProductRepository, MostBoughtProductRepository>();
-            services.AddScoped<IMostBoughtProductService, MostBoughtProductService>();
-            services.AddScoped<IMostBoughtProductQuery, MostBoughtProductQuery>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICategoryQuery, CategoryQuery>();
             services.AddScoped<ISubcategoryRepository, SubcategoryRepository>();
             services.AddScoped<ISubcategoryService, SubcategoryService>();
             services.AddScoped<ISubcategoryQuery, SubcategoryQuery>();
+            services.AddScoped<ICheckoutRepository, CheckoutRepository>();
+            services.AddScoped<ICheckoutService, CheckoutService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

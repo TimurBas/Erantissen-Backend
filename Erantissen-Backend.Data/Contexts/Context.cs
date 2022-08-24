@@ -7,7 +7,6 @@ namespace Erantissen_Backend.Data.Contexts
     {
         public DbSet<ProductDto> Products { get; set; }
         public DbSet<HeroDto> Hero { get; set; }
-        public DbSet<MostBoughtProductDto> MostBoughtProducts { get; set; }
         public DbSet<CategoryDto> Categories { get; set; }
         public DbSet<SubcategoryDto> Subcategories { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -26,14 +25,6 @@ namespace Erantissen_Backend.Data.Contexts
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<HeroDto>().ToTable("Hero").HasKey(h => h.Id);
-
-            var mbps = builder.Entity<MostBoughtProductDto>().ToTable("MostBoughtProducts");
-            mbps.HasKey(mbp => mbp.Title);
-            mbps.HasOne(mbp => mbp.Subcategory)
-                .WithMany(sc => sc.MostBoughtProducts)
-                .HasForeignKey(mbp => mbp.SubcategoryTitle)
-                .OnDelete(DeleteBehavior.Cascade);
-
             builder.Entity<CategoryDto>().ToTable("Categories").HasKey(c => c.Title);
 
             var subcategories = builder.Entity<SubcategoryDto>().ToTable("Subcategories");

@@ -35,7 +35,7 @@ namespace Erantissen_Backend.Data.Repositories
         }
         public async Task DeleteSubcategoryAsync(string title)
         {
-            var subcategory = _context.Subcategories.Include(sc => sc.Products).Include(sc => sc.MostBoughtProducts).Where(sc => sc.Title.Equals(title)).FirstOrDefault();
+            var subcategory = _context.Subcategories.Include(sc => sc.Products).Where(sc => sc.Title.Equals(title)).FirstOrDefault();
             _context.Subcategories.Remove(subcategory);
             await _context.SaveChangesAsync();
         }
