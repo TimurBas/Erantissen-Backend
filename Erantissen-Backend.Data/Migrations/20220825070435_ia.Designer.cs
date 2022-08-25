@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Erantissen_Backend.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220824223934_mkd")]
-    partial class mkd
+    [Migration("20220825070435_ia")]
+    partial class ia
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -4,7 +4,7 @@
 
 namespace Erantissen_Backend.Data.Migrations
 {
-    public partial class mkd : Migration
+    public partial class ia : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
