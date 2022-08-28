@@ -2,10 +2,7 @@
 using Erantissen_Backend.App.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Stripe;
-using Stripe.Checkout;
 using System;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -32,44 +29,23 @@ namespace Erantissen_Backend.Controllers
         [HttpPost()]
         public async Task<ActionResult> CreateNewPayment([FromBody] CreateNewPaymentRequest r)
         {
-            StripeConfiguration.ApiKey = "sk_test_51Laz4cEUjePeoHs8en4zX6MMYxeWB6XJuWBOXQzvc2vQnf0oRjcGoFS54KgWSCTd11cSrceRCSaI2PEqewV5xMLF00sx9mMIFi";
 
-            var options = new SessionCreateOptions
-            {
-                SuccessUrl = r.SuccessUrl,
-                CancelUrl = r.CancelUrl,
-                Mode = r.Mode,
-                LineItems = r.LineItems.Select(i => new SessionLineItemOptions()
-                {
-                    Price = $"price_{Guid.NewGuid()}",
-                    Quantity = i.Quantity,
-                    PriceData = new SessionLineItemPriceDataOptions()
-                    {
-                        Currency = i.Price.Currency,
-
-                    }
-                }).ToList()
-            };
-
-            var service = new SessionService();
-            service.Create(options);
-
-
-
-            _client.BaseAddress = new Uri(_config["StripeBaseUrl"]);
+            _client.BaseAddress = new Uri(_config["ReepayBaseUrl"]);
+            var request = new HttpRequestMessage(HttpMethod.Post, "/v1/session/charge");
             var content = new StringContent(JsonSerializer.Serialize(r), Encoding.UTF8, "application/json");
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(_config["NetsEasyTestSecretKey"]);
+            request.Content = content;
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", _config["ReepaySecretKey"]);
 
-            var response = await _client.PostAsync("/v1/payments", content);
+            var response = await _client.SendAsync(request);
+            var responseContent = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
-                return BadRequest();
+                return BadRequest(responseContent);
 
-            var responseContent = await response.Content.ReadAsStringAsync();
             return Ok(responseContent);
         }
 
-        [HttpPatch()]
+        [HttpPut()]
         public async Task<ActionResult> UpdateProduct([FromRoute] string title)
         {
             await _service.UpdateProduct(title);

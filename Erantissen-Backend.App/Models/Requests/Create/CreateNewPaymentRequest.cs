@@ -5,54 +5,59 @@ namespace Erantissen_Backend.App.Models.Requests.Create
 {
     public class CreateNewPaymentRequest
     {
-        [JsonPropertyName("cancel_url")]
-        public string CancelUrl { get; set; }
+        [JsonPropertyName("locale")]
+        public string Locale { get; set; }
+        [JsonPropertyName("payment_methods")]
+        public List<string> PaymentMethods { get; set; }
 
-        [JsonPropertyName("success_url")]
-        public string SuccessUrl { get; set; }
-
-        [JsonPropertyName("mode")]
-        public string Mode { get; set; }
-
-        [JsonPropertyName("line_items")]
-        public List<LineItem> LineItems { get; set; }
+        [JsonPropertyName("order")]
+        public Order Order { get; set; }
     }
 
-    public class TaxRates
+    public class Order
     {
-        [JsonPropertyName("display_name")]
-        public string DisplayName { get; set; }
+        [JsonPropertyName("handle")]
+        public string Handle { get; set; }
+        [JsonPropertyName("customer")]
+        public Customer Customer { get; set; }
 
-        [JsonPropertyName("inclusive")]
-        public bool Inclusive { get; set; }
+        [JsonPropertyName("order_lines")]
+        public List<OrderLine> OrderLines { get; set; }
 
-        [JsonPropertyName("percentage")]
-        public int Percentage { get; set; }
-
-        [JsonPropertyName("country")]
-        public string Country { get; set; }
+        [JsonPropertyName("currency")]
+        public string Currency { get; set; }
     }
-    public class LineItem
+
+    public class Customer
     {
-        [JsonPropertyName("price")]
-        public Price Price { get; set; }
+        [JsonPropertyName("handle")]
+        public string Handle { get; set; }
+
+        [JsonPropertyName("first_name")]
+        public string FirstName { get; set; }
+
+        [JsonPropertyName("last_name")]
+        public string LastName { get; set; }
+
+        [JsonPropertyName("phone")]
+        public string Phone { get; set; }
+    }
+
+    public class OrderLine
+    {
+        [JsonPropertyName("ordertext")]
+        public string Ordertext { get; set; }
+
+        [JsonPropertyName("amount")]
+        public int Amount { get; set; }
 
         [JsonPropertyName("quantity")]
         public int Quantity { get; set; }
 
-        [JsonPropertyName("tax_rates")]
-        public TaxRates TaxRates { get; set; }
-    }
+        [JsonPropertyName("vat")]
+        public double Vat { get; set; }
 
-    public class Price
-    {
-        [JsonPropertyName("currency")]
-        public string Currency { get; set; }
-
-        [JsonPropertyName("product")]
-        public string Product { get; set; }
-
-        [JsonPropertyName("unit_amount")]
-        public int UnitAmount { get; set; }
+        [JsonPropertyName("amount_incl_vat")]
+        public bool AmountInclVat { get; set; }
     }
 }
