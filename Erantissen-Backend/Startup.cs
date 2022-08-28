@@ -28,10 +28,12 @@ namespace Erantissen_Backend
         {
 
             services.AddControllers();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Erantissen_Backend", Version = "v1" });
             });
+            services.AddHttpClient();
             services.AddDbContext<Context>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductService, ProductService>();
@@ -62,7 +64,12 @@ namespace Erantissen_Backend
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors(x => x
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .SetIsOriginAllowed(origin => true) // allow any origin
+                                                        //.WithOrigins("https://localhost:44351")); // Allow only this origin can also have multiple origins separated with comma
+                    .AllowCredentials()); // allow credentials
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
